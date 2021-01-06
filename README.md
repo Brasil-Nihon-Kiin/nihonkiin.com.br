@@ -23,8 +23,8 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
 <div id="user-content-toc">
   <ul>
     <li>
-      <a href="#1-ao-desenvolvedor-ou-contribuidor"
-        >1. Ao Desenvolvedor ou Contribuidor</a
+      <a href="#1-aos-desenvolvedores-e-contribuidores"
+        >1. Aos Desenvolvedores e Contribuidores</a
       >
       <ul>
         <li>
@@ -52,7 +52,7 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
 
 ---
 
-## 1. Ao Desenvolvedor ou Contribuidor
+## 1. Aos Desenvolvedores e Contribuidores
 
 Este projeto possui código aberto, ou seja, qualquer um pode examinar como as coisas funcionam e, ainda, propor mudanças e melhoras.
 

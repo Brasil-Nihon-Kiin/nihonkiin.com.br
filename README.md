@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.png" /></a>
+  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.PNG" /></a>
 </p>
 
 <p align="center">
@@ -9,8 +9,12 @@
 
 # Brasil Nihon Kiin
 
+> Accesse o site aqui: [nihonkiin.com.br][site]
+
 A infraestrutura do frontend do site da Brasil Nihon Kiin.
 
+
+[site]: http://www.nihonkiin.com.br/
 
 ---
 

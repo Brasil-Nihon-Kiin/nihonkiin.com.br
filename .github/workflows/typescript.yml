@@ -1,0 +1,23 @@
+name: TS Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checking out the Project's Code
+        uses: actions/checkout@v2
+      - name: Installing TypeScript and Other Dependencies
+        run: npm ci
+      - name: Compiling the TypeScript Code
+        run: tsc
+      - name: Running Tests
+        run: npm t

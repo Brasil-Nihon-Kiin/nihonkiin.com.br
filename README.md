@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.PNG" /></a>
+  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.png" /></a>
 </p>
 
 <p align="center">

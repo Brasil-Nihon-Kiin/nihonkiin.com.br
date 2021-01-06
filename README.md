@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.png" /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/Brasil-Nihon-Kiin/nihonkiin.com.br/actions"><img src="https://github.com/Brasil-Nihon-Kiin/nihonkiin.com.br/workflows/TS%20Tests/badge.svg" alt="Github CI"/></a>
+  <a href="https://gitter.im/nihonkiin-com-br/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/nihonkiin-com-br/community.svg" alt="Gitter"/></a>
+</p>
+
 # Brasil Nihon Kiin
 
 A infraestrutura do frontend do site da Brasil Nihon Kiin.
@@ -7,11 +16,35 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
 
 **Table of Contents**
 
-- [1. Ao Desenvolvedor ou Contribuidor](#1-ao-desenvolvedor-ou-contribuidor)
-    - [1.1. Princípios de Design deste Projeto](#11-princípios-de-design-deste-projeto)
-    - [1.2. Diretivas ao Backend](#12-diretivas-ao-backend)
-    - [1.3. Configurando o Ambiente de Desenvolvimento](#13-configurando-o-ambiente-de-desenvolvimento)
-    - [1.4. Como incluir um SGF interativamente em um arquivo HTML](#14-como-incluir-um-sgf-interativamente-em-um-arquivo-html)
+<div id="user-content-toc">
+  <ul>
+    <li>
+      <a href="#1-ao-desenvolvedor-ou-contribuidor"
+        >1. Ao Desenvolvedor ou Contribuidor</a
+      >
+      <ul>
+        <li>
+          <a href="#11-princípios-de-design-deste-projeto"
+            >1.1. Princípios de Design deste Projeto</a
+          >
+        </li>
+        <li>
+          <a href="#12-diretivas-ao-backend">1.2. Diretivas ao Backend</a>
+        </li>
+        <li>
+          <a href="#13-configurando-o-ambiente-de-desenvolvimento"
+            >1.3. Configurando o Ambiente de Desenvolvimento</a
+          >
+        </li>
+        <li>
+          <a href="#14-como-incluir-um-sgf-interativamente-em-um-arquivo-html"
+            >1.4. Como incluir um SGF interativamente em um arquivo HTML</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
 
 ---
 
@@ -51,17 +84,55 @@ Além disso, recomenda-se o uso do editor (IDE) VS Code, que é leve além de co
 O ambiente ideal atual para o desenvolvimento do site é:
 
 1. Instale todas as dependências localmente via `npm i`
+    - Você precisará instalar [`node.js`][node.js] primeiro.
 1. Abra, idealmente 3 terminais paralelos e digite os seguintes comandos em cada um para reatualizar as mudanças no código automaticamente quando se salvar o arquivo:
-    1. `npm t -- --watch`
-    1. `npx webpack --watch`
     1. `tsc -w`
+        - Compila &mdash; na verdade, o termo correto seria transpila &mdash; o código de TypeScript para JavaScript, o que será utilizado para rodar os testes.
+    1. `npm t -- --watch`
+        - Testes.
+    1. `npx webpack --watch`
+        - [Webpack][webpack] comprime o código escrito em TypeScript para somente um arquivo JavaScript, o que ajuda na performance do site e simplifica o número de arquivos em produção.
 1. Abra o `index.html` no browser juntamente com o inspetor de código.
-    - Utilizo a extensão [Live Server][live_server] para atualizar a página web ao salvar o código.
+    - Recomenda-se utilizar a extensão [Live Server][live_server] para atualizar a página web ao salvar o código.
 
 
 [live_server]: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+[node.js]: https://nodejs.org/en/
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+[webpack]: https://webpack.js.org/
 
 ### 1.4. Como incluir um SGF interativamente em um arquivo HTML
 
-<!-- TODO: Mencionar o pacote JS Glift: https://github.com/Kashomon/glift -->
+Há algumas maneiras de se compartilhar arquivos SGF online:
+
+1. Via link local. A pessoa baixa o arquivo como qualquer outro e depois visualiza o conteúdo com um editor.
+1. Via um editor na própria página HTML.
+
+A segunda opção é mais difícil pois requer algum programa que saiba ler SGFs e desenhar o jogo dinamicamente. Em WordPress, há algumas extensões para isso, mas a única que parece ter sobrevivido o teste do tempo foi a [Glift][glift]. Na verdade, ela é um pacote de JavaScript, então pode ser utilizada fora do WordPress também. Inclusive, ela era utilizada no, agora defunto, site [GoGameGuru][gogameguru].
+
+Para incluir um SGF dinamicamente dentro da página HTML, é preciso:
+
+1. Criar um elemento `<div>` com um `id` específico.
+1. Criar um `<script>` com `glift.create` dentro.
+
+Um exemplo:
+
+```html
+<div id="SGF" style="height: 500px; width: 100%"></div>
+<script>
+    glift.create({
+    divId: "SGF",
+    sgf: "Liang Weijin vs Fan Xiping.sgf",
+    });
+</script>
+```
+
+Glift está adicionado à pasta `assets/` deste projeto, então, para adicioná-lo à página em que você estiver trabalhando, adicione ao `<head>`:
+
+```html
+<script src="../../assets/glift_1_1_2.min.js"></script>
+```
+
+
+[glift]: https://github.com/Kashomon/glift
+[gogameguru]: https://gogameguru.com/

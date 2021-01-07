@@ -16,6 +16,8 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
 
 [site]: http://www.nihonkiin.com.br/
 
+<!-- TODO: Ao escritor/criador de conteúdo -->
+
 ---
 
 **Index**

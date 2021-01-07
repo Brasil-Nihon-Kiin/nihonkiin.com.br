@@ -124,10 +124,10 @@ Um exemplo:
 ```html
 <div id="SGF" style="height: 500px; width: 100%"></div>
 <script>
-    glift.create({
+  glift.create({
     divId: "SGF",
     sgf: "Liang Weijin vs Fan Xiping.sgf",
-    });
+  });
 </script>
 ```
 

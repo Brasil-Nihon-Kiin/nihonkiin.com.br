@@ -134,9 +134,13 @@ Um exemplo:
 Glift está adicionado à pasta `assets/` deste projeto, então, para adicioná-lo à página em que você estiver trabalhando, adicione ao `<head>`:
 
 ```html
-<script src="../../assets/glift_1_1_2.min.js"></script>
+<script src="/assets/glift_1_1_2.min.js"></script>
 ```
 
 
 [glift]: https://github.com/Kashomon/glift
 [gogameguru]: https://gogameguru.com/
+
+### 1.5. Sobre Testes
+
+Testes (TDD) são sempre bons e melhoram o produto em absoluto. Porém, testes de UI tendem a ter um custo benefício extremamente menor.

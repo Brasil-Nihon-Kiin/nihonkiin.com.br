@@ -1,4 +1,4 @@
-import BrNhkNav from "../components/nav";
+import BrNhkNav from "../ui/nav";
 
 export default class Setup {
   constructor() {

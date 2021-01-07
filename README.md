@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://www.nihonkiin.com.br/"><img src="assets/logo.png" /></a>
+  <a href="http://www.nihonkiin.com.br/"><img src="midia/logo.png" /></a>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
 
 ---
 
-**Table of Contents**
+**Index**
 
 <div id="user-content-toc">
   <ul>
@@ -134,10 +134,10 @@ Um exemplo:
 </script>
 ```
 
-Glift está adicionado à pasta `assets/` deste projeto, então, para adicioná-lo à página em que você estiver trabalhando, adicione ao `<head>`:
+Glift está adicionado à pasta `midia/` deste projeto, então, para adicioná-lo à página em que você estiver trabalhando, adicione ao `<head>`:
 
 ```html
-<script src="/assets/glift_1_1_2.min.js"></script>
+<script src="/midia/glift_1_1_2.min.js"></script>
 ```
 
 

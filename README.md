@@ -45,6 +45,9 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin.
             >1.4. Como incluir um SGF interativamente em um arquivo HTML</a
           >
         </li>
+        <li>
+          <a href="#15-sobre-testes">1.5. Sobre Testes</a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -143,4 +146,6 @@ Glift está adicionado à pasta `assets/` deste projeto, então, para adicioná-
 
 ### 1.5. Sobre Testes
 
-Testes (TDD) são sempre bons e melhoram o produto em absoluto. Porém, testes de UI tendem a ter um custo benefício extremamente menor.
+Testes (TDD) são sempre bons e melhoram a qualidade do produto em absoluto. Porém, testes de UI tendem a ter um custo benefício extremamente menor, pois o design da UI é muito mais volátil do que a lógica de negócio tipicamente. Assim que a UI se estabiliza, testes de UI começam a ter um custo-benefício mais decente.
+
+Sendo assim, a princípio, para o frontend ou UI, testes não serão prioridade.

@@ -11,7 +11,7 @@
 
 > Accesse o site aqui: [nihonkiin.com.br][site]
 
-A infraestrutura do frontend do site da Brasil Nihon Kiin.
+A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasileiro.
 
 
 [site]: http://www.nihonkiin.com.br/
@@ -70,7 +70,9 @@ Este projeto possui código aberto, ou seja, qualquer um pode examinar como as c
 
 ### 1.1. Princípios de Design deste Projeto
 
-O princípio-mor deste projeto é a simplicidade. Somente o que é simples e efetivo será implementado, tanto no frontend quanto no backend. Bibliotecas de frontend, por exemplo, como Bootstrap poderão vir a ser utilizadas, mas recomenda-se que não a princípio pois, em geral, são complicações desnecessárias.
+O princípio-mor deste projeto é a *simplicidade*. Somente o que é simples e efetivo será implementado, tanto no frontend quanto no backend. Bibliotecas de frontend, por exemplo &mdash; como Bootstrap &mdash; poderão vir a ser utilizadas, mas recomenda-se que não a princípio pois, em geral, são complicações desnecessárias.
+
+Outro princípio tão importante quanto o anterior é *construir algo que dure*. Especialmente depois de experienciar em tempos recentes, com as redes sociais, a dor de ter fontes constantes de informações que são ou irrelevantes ou efêmeras, ficou claro que ninguém mais quer algo que muda constantemente e só nos consome tempo, o único recurso finito não recuperável que temos. O núcleo deste site deve ser, portanto, sólido e duradouro.
 
 ### 1.2. Diretivas ao Backend
 

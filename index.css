@@ -49,6 +49,8 @@ h6 {
 
 h1 {
   font-size: 1.75rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 a {
@@ -167,8 +169,22 @@ iframe {
   padding-right: var(--margin);
 }
 
+figure {
+  display: table;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
 img {
   max-width: var(--max-content-width-mobile);
+}
+
+figcaption {
+  font-size: 0.85em;
+  display: table-caption;
+  caption-side: bottom;
+  text-align: justify;
 }
 
 textarea {

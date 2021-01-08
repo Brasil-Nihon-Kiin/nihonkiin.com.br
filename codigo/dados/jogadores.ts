@@ -8,6 +8,7 @@ interface Jogador {
   perfis: Perfil[];
   social: Social[];
   contato?: Contato;
+  foto?: URL;
 }
 
 interface Perfil {
@@ -139,5 +140,6 @@ export const jogadores: Jogador[] = [
       email: "philippefanaro@gmail.com",
       telefone: 5511970286739,
     },
+    foto: new URL("https://imgur.com/gallery/YtxsVTy"),
   },
 ];

@@ -38,7 +38,12 @@ body {
   padding-bottom: 30px;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 1.75rem;
   text-align: left;
 }
@@ -46,6 +51,10 @@ h1 {
 a {
   text-decoration: none;
   color: #95c379;
+}
+
+a.local-link {
+  color: #cc7847;
 }
 
 blockquote {

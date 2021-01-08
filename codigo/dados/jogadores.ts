@@ -7,6 +7,7 @@ interface Jogador {
   professor_certificado: boolean;
   perfis: Perfil[];
   social: Social[];
+  contato?: Contato;
 }
 
 interface Perfil {
@@ -18,6 +19,11 @@ interface Perfil {
 interface Social {
   rede: Rede;
   perfil: URL;
+}
+
+interface Contato {
+  email?: string;
+  telefone?: number;
 }
 
 enum Rede {
@@ -129,5 +135,9 @@ export const jogadores: Jogador[] = [
         perfil: new URL("philippe.fanaro"),
       },
     ],
+    contato: {
+      email: "philippefanaro@gmail.com",
+      telefone: 5511970286739,
+    },
   },
 ];

@@ -50,6 +50,7 @@ a {
 blockquote {
   margin-block-start: 10px;
   margin-block-end: 10px;
+  margin-left: 20px;
   border-left: 3px solid var(--text-color);
   padding-left: 10px;
 }
@@ -81,12 +82,27 @@ div#index li:before {
   padding-right: 0.6em;
 }
 
-div#top-home {
+div#topo {
   display: inline-flex;
 }
 
+div#direita {
+  margin-top: 12px;
+}
+
+div #social-icons {
+  margin-left: 5px;
+  margin-bottom: 14px;
+}
+
+div#social-icons svg,
+div#social-icons image {
+  height: 35px;
+  width: 35px;
+  margin-right: 20px;
+}
+
 table {
-  margin-top: 8px;
   padding-right: 24px;
   border-spacing: 0;
   border-collapse: separate;

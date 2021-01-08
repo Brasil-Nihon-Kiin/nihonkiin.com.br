@@ -40,6 +40,7 @@ body {
 
 h1 {
   font-size: 1.75rem;
+  text-align: left;
 }
 
 a {
@@ -97,9 +98,9 @@ div #social-icons {
 
 div#social-icons svg,
 div#social-icons image {
-  height: 35px;
-  width: 35px;
-  margin-right: 20px;
+  height: 30px;
+  width: 30px;
+  margin-right: 25px;
 }
 
 table {
@@ -107,6 +108,7 @@ table {
   border-spacing: 0;
   border-collapse: separate;
   border: 1px #090705;
+  text-align: left;
 }
 
 table > caption {
@@ -155,6 +157,11 @@ iframe {
 
 img {
   max-width: var(--max-content-width-mobile);
+}
+
+textarea {
+  background-color: #1b1c1f;
+  color: var(--text-color);
 }
 
 br-nhk-nav h1 {

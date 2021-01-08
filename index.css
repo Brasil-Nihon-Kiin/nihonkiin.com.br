@@ -17,14 +17,144 @@
       format("svg"); /* iOS 4.1- */
 }
 
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --text-color: #abb2bf;
+  --max-content-width-mobile: 90vw;
+  --max-content-width-desktop: 580px;
+  --margin: 1rem;
+}
+
 body {
-  font-family: "Futura Book", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
-    BlinkMacSystemFont, "Segoe UI";
-  padding-left: 1rem;
-  padding-right: 1rem;
+  background-color: #282a36;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  max-width: var(--max-content-width-mobile);
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+  padding-top: 1.5rem;
+  text-align: justify;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 1.75rem;
 }
 
 a {
   text-decoration: none;
+  color: #95c379;
+}
+
+blockquote {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+  border-left: 3px solid var(--text-color);
+  padding-left: 10px;
+}
+
+div#index {
+  padding-right: 10px;
+  text-align: left;
+}
+
+div#index ol {
+  counter-reset: item;
+  margin-top: 8px;
+  margin-left: 0;
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+div#index li {
+  display: table;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+div#index li:before {
+  color: var(--local-link-color);
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+div#top-home {
+  display: inline-flex;
+}
+
+table {
+  margin-top: 8px;
+  padding-right: 24px;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: 1px #090705;
+}
+
+table > caption {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+td,
+th {
+  border: solid 0.25px #1b1c1f;
+}
+
+td,
+th {
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-bottom: 7.5px;
+}
+
+tr:nth-child(odd),
+th {
+  background-color: #222222;
+}
+
+tr:nth-child(even),
+th {
+  background-color: #090705;
+}
+
+p#subtitulo {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+iframe {
+  max-width: var(--max-content-width-mobile);
+  max-height: 51vw;
+  width: 560px;
+  height: 315px;
+  padding-right: var(--margin);
+}
+
+img {
+  max-width: var(--max-content-width-mobile);
+}
+
+br-nhk-nav h1 {
+  font-family: "Futura Book", var(--font-family);
+  font-size: 2.25rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  body {
+    max-width: var(--max-content-width-desktop);
+  }
+
+  img,
+  iframe {
+    max-width: var(--max-content-width-desktop);
+  }
 }

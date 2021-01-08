@@ -1,3 +1,3 @@
-import Setup from "./infra/configuracao";
+import Configuracao from "./infra/configuracao";
 
-new Setup();
+new Configuracao();

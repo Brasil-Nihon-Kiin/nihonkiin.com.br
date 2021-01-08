@@ -3,7 +3,7 @@ export default class BrNhkNav extends HTMLElement {
 
   private static readonly template: string = `
     <a href="/">
-      <img src="/midia/logo.png" alt="Logo" />
+      <h1>BRASIL NIHON KIIN</h1>
     </a>
   `;
 

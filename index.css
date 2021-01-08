@@ -44,8 +44,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1.75rem;
   text-align: left;
+}
+
+h1 {
+  font-size: 1.75rem;
 }
 
 a {

@@ -70,6 +70,11 @@ blockquote {
   padding-left: 10px;
 }
 
+ul li,
+ol li {
+  padding-bottom: 10px;
+}
+
 div#index {
   padding-right: 10px;
   text-align: left;

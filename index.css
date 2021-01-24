@@ -34,7 +34,7 @@ body {
   padding-left: var(--margin);
   padding-right: var(--margin);
   padding-top: 1.5rem;
-  text-align: justify;
+  text-align: left;
   padding-bottom: 30px;
 }
 

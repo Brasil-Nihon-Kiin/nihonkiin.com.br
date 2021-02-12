@@ -34,7 +34,7 @@ body {
   padding-left: var(--margin);
   padding-right: var(--margin);
   padding-top: 1.5rem;
-  text-align: justify;
+  text-align: left;
   padding-bottom: 30px;
 }
 
@@ -68,6 +68,11 @@ blockquote {
   margin-left: 20px;
   border-left: 3px solid var(--text-color);
   padding-left: 10px;
+}
+
+ul li,
+ol li {
+  padding-bottom: 10px;
 }
 
 div#index {

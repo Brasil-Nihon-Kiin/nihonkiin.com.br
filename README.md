@@ -24,7 +24,7 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 <div id="user-content-toc">
   <ul>
-    <li><a href="#1-o-time"></a></li>
+    <li><a href="#1-o-time">O Time</a></li>
     <li>
       <a href="#2-aos-desenvolvedores-e-contribuidores"
         >1. Aos Desenvolvedores e Contribuidores</a

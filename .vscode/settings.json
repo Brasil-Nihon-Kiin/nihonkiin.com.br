@@ -8,5 +8,6 @@
     "editor.formatOnSave": true,
     "markdownlint.config": {
       "MD036": false
-    }
+    },
+    "liveServer.settings.port": 5501
   }

@@ -24,31 +24,32 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 <div id="user-content-toc">
   <ul>
+    <li><a href="#1-o-time">1. O Time</a></li>
     <li>
-      <a href="#1-aos-desenvolvedores-e-contribuidores"
-        >1. Aos Desenvolvedores e Contribuidores</a
+      <a href="#2-aos-desenvolvedores-e-contribuidores"
+        >2. Aos Desenvolvedores e Contribuidores</a
       >
       <ul>
         <li>
-          <a href="#11-princípios-de-design-deste-projeto"
-            >1.1. Princípios de Design deste Projeto</a
+          <a href="#21-princípios-de-design-deste-projeto"
+            >2.1. Princípios de Design deste Projeto</a
           >
         </li>
         <li>
-          <a href="#12-diretivas-ao-backend">1.2. Diretivas ao Backend</a>
+          <a href="#22-diretivas-ao-backend">2.2. Diretivas ao Backend</a>
         </li>
         <li>
-          <a href="#13-configurando-o-ambiente-de-desenvolvimento"
-            >1.3. Configurando o Ambiente de Desenvolvimento</a
+          <a href="#23-configurando-o-ambiente-de-desenvolvimento"
+            >2.3. Configurando o Ambiente de Desenvolvimento</a
           >
         </li>
         <li>
-          <a href="#14-como-incluir-um-sgf-interativamente-em-um-arquivo-html"
-            >1.4. Como incluir um SGF interativamente em um arquivo HTML</a
+          <a href="#24-como-incluir-um-sgf-interativamente-em-um-arquivo-html"
+            >2.4. Como incluir um SGF interativamente em um arquivo HTML</a
           >
         </li>
         <li>
-          <a href="#15-sobre-testes">1.5. Sobre Testes</a>
+          <a href="#25-sobre-testes">2.5. Sobre Testes</a>
         </li>
       </ul>
     </li>
@@ -57,7 +58,20 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 ---
 
-## 1. Aos Desenvolvedores e Contribuidores
+## 1. O Time
+
+| Nome                        | Perfil                   | Funções               |
+| --------------------------- | ------------------------ | --------------------- |
+| Philippe Fanaro             | [psygo][psygo]           | Desenvolvedor, Editor |
+| Laércio Pereira             | [laercioskt][laercioskt] | Desenvolvedor, Editor |
+| Felipe Herman van Riemsdijk | [sagemerlin][sagemerlin] | Desenvolvedor, Editor |
+
+
+[psygo]: https://github.com/psygo
+[laercioskt]: https://github.com/laercioskt
+[sagemerlin]: https://github.com/sagemerlin
+
+## 2. Aos Desenvolvedores e Contribuidores
 
 Este projeto possui código aberto, ou seja, qualquer um pode examinar como as coisas funcionam e, ainda, propor mudanças e melhoras.
 
@@ -68,13 +82,13 @@ Este projeto possui código aberto, ou seja, qualquer um pode examinar como as c
 [issues]: https://github.com/Brasil-Nihon-Kiin/nihonkiin.com.br/issues
 [prs]: https://github.com/Brasil-Nihon-Kiin/nihonkiin.com.br/pulls
 
-### 1.1. Princípios de Design deste Projeto
+### 2.1. Princípios de Design deste Projeto
 
 O princípio-mor deste projeto é a *simplicidade*. Somente o que é simples e efetivo será implementado, tanto no frontend quanto no backend. Bibliotecas de frontend, por exemplo &mdash; como Bootstrap &mdash; poderão vir a ser utilizadas, mas recomenda-se que não a princípio pois, em geral, são complicações desnecessárias.
 
 Outro princípio tão importante quanto o anterior é *construir algo que dure*. Especialmente depois de experienciar em tempos recentes, com as redes sociais, a dor de ter fontes constantes de informações que são ou irrelevantes ou efêmeras, ficou claro que ninguém mais quer algo que muda constantemente e só nos consome tempo, o único recurso finito não recuperável que temos. O núcleo deste site deve ser, portanto, sólido e duradouro.
 
-### 1.2. Diretivas ao Backend
+### 2.2. Diretivas ao Backend
 
 Evitaremos ao máximo sequer utilizar backend. O custo de manutenção cresce exponencialmente ao se acrescentar servidores personalizados. O serviço do Github Pages, por exemplo abstrai grande parte do custo de manutenção de um servidor para entregar o frontend, isto é, o HTML estático.
 
@@ -86,7 +100,7 @@ Essa mesma regra de evitar o backend vale para algo como criação de um fórum.
 [go_brasil_fb]: https://www.facebook.com/groups/gobrasil
 [ogs_forums]: https://forums.online-go.com/
 
-### 1.3. Configurando o Ambiente de Desenvolvimento
+### 2.3. Configurando o Ambiente de Desenvolvimento
 
 Utilizamos TypeScript para obter um ambiente de programação com mais checagem de tipos e melhor suporte à objetos, o que, em geral, leva a menos bugs, é basicamente uma versão mais agradável e simples de se utilizar de JavaScript. Além disso, ela abstrai todas as milhões de mudanças que JavaScript vêm tomando ao longo dos anos.
 
@@ -112,7 +126,7 @@ O ambiente ideal atual para o desenvolvimento do site é:
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [webpack]: https://webpack.js.org/
 
-### 1.4. Como incluir um SGF interativamente em um arquivo HTML
+### 2.4. Como incluir um SGF interativamente em um arquivo HTML
 
 Há algumas maneiras de se compartilhar arquivos SGF online:
 
@@ -148,7 +162,7 @@ Glift está adicionado à pasta `midia/` deste projeto, então, para adicioná-l
 [glift]: https://github.com/Kashomon/glift
 [gogameguru]: https://gogameguru.com/
 
-### 1.5. Sobre Testes
+### 2.5. Sobre Testes
 
 Testes (TDD) são sempre bons e melhoram a qualidade do produto em absoluto. Porém, testes de UI tendem a ter um custo benefício extremamente menor, pois o design da UI é muito mais volátil do que a lógica de negócio tipicamente. Assim que a UI se estabiliza, testes de UI começam a ter um custo-benefício mais decente.
 

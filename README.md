@@ -36,7 +36,7 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
           >
         </li>
         <li>
-          <a href="#22-diretivas-ao-backend">1.2. Diretivas ao Backend</a>
+          <a href="#22-diretivas-ao-backend">2.2. Diretivas ao Backend</a>
         </li>
         <li>
           <a href="#23-configurando-o-ambiente-de-desenvolvimento"

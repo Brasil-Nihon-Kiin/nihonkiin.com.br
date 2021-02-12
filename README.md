@@ -60,14 +60,16 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 ## 1. O Time
 
-Desenvolvedores:
+| Nome                        | Perfil                   | Funções               |
+| --------------------------- | ------------------------ | --------------------- |
+| Philippe Fanaro             | [psygo][psygo]           | Desenvolvedor, Editor |
+| Laércio Pereira             | [laercioskt][laercioskt] | Desenvolvedor, Editor |
+| Felipe Herman van Riemsdijk | [sagemerlin][sagemerlin] | Desenvolvedor, Editor |
 
-- Philippe Fanaro &mdash; @psygo
-- Laércio Pereira &mdash; @laercioskt
 
-Editores:
-
-- Felipe Herman van Riemsdijk &mdash; @sagemerlin
+[psygo]: https://github.com/psygo
+[laercioskt]: https://github.com/laercioskt
+[sagemerlin]: https://github.com/sagemerlin
 
 ## 2. Aos Desenvolvedores e Contribuidores
 

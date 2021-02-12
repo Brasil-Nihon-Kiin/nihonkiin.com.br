@@ -24,15 +24,15 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 <div id="user-content-toc">
   <ul>
-    <li><a href="#1-o-time">O Time</a></li>
+    <li><a href="#1-o-time">1. O Time</a></li>
     <li>
       <a href="#2-aos-desenvolvedores-e-contribuidores"
-        >1. Aos Desenvolvedores e Contribuidores</a
+        >2. Aos Desenvolvedores e Contribuidores</a
       >
       <ul>
         <li>
           <a href="#21-princípios-de-design-deste-projeto"
-            >1.1. Princípios de Design deste Projeto</a
+            >2.1. Princípios de Design deste Projeto</a
           >
         </li>
         <li>
@@ -40,16 +40,16 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
         </li>
         <li>
           <a href="#23-configurando-o-ambiente-de-desenvolvimento"
-            >1.3. Configurando o Ambiente de Desenvolvimento</a
+            >2.3. Configurando o Ambiente de Desenvolvimento</a
           >
         </li>
         <li>
           <a href="#24-como-incluir-um-sgf-interativamente-em-um-arquivo-html"
-            >1.4. Como incluir um SGF interativamente em um arquivo HTML</a
+            >2.4. Como incluir um SGF interativamente em um arquivo HTML</a
           >
         </li>
         <li>
-          <a href="#25-sobre-testes">1.5. Sobre Testes</a>
+          <a href="#25-sobre-testes">2.5. Sobre Testes</a>
         </li>
       </ul>
     </li>

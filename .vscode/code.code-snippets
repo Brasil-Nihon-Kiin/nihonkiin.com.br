@@ -1,0 +1,21 @@
+{
+	"Glift Import": {
+		"prefix": "glift_import",
+		"body": [
+			"<script src=\"../../assets/glift_1_1_2.min.js\"></script>"
+		],
+		"description": "Glift's script import for the project."
+	},
+	"Glift SGF": {
+		"prefix": "glift_sgf",
+		"body": [
+			"<div class=\"SGF\" id=\"SGF\"></div>",
+			"<script>",
+			"  glift.create({",
+			"    divId: \"SGF\",",
+			"    sgf: \"${1:game-name}\",",
+			"  });",
+			"</script>"
+		]
+	},
+}

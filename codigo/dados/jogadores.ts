@@ -1,3 +1,13 @@
+/**
+ * Há informações que não são preenchidas quando o jogador é cadastrado pela
+ * primeira vez. Ou o moderador as preenche ou elas começam com um valor
+ * pré-determinado.
+ *
+ * Por exemplo, o usuário pode cadastrar seu próprio nível inicialmente, porém
+ * o nível percebido pela Nihon Kiin é algo que será decidido pelo
+ * cadastrador/moderador.
+ */
+
 interface Jogador {
   nome: string;
   cidade: string;

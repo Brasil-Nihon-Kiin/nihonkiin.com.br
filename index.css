@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/* Configurações Globais */
+
 @font-face {
   font-family: "Futura Book";
   src: url("http://db.onlinewebfonts.com/t/b46bb1fc76216f5cd90457d0451dbee4.eot"); /* IE9*/
@@ -34,18 +37,11 @@ body {
   padding-left: var(--margin);
   padding-right: var(--margin);
   padding-top: 1.5rem;
-  text-align: left;
   padding-bottom: 30px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-align: left;
-}
+/* -------------------------------------------------------------------------- */
+/* Texto Básico */
 
 h1 {
   font-size: 1.75rem;
@@ -70,14 +66,21 @@ blockquote {
   padding-left: 10px;
 }
 
+p#subtitulo {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
 ul li,
 ol li {
   padding-bottom: 10px;
 }
 
+/* -------------------------------------------------------------------------- */
+/* <div>s da página inicial */
+
 div#index {
   padding-right: 10px;
-  text-align: left;
 }
 
 div#index ol {
@@ -123,16 +126,17 @@ div#social-icons image {
   margin-right: 25px;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Tabela Padrão */
+
 table {
   padding-right: 24px;
   border-spacing: 0;
   border-collapse: separate;
   border: 1px #090705;
-  text-align: left;
 }
 
 table > caption {
-  text-align: left;
   margin-bottom: 10px;
   margin-left: 5px;
   font-size: 1rem;
@@ -162,10 +166,7 @@ th {
   background-color: #090705;
 }
 
-p#subtitulo {
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
+/* -------------------------------------------------------------------------- */
 
 iframe {
   max-width: var(--max-content-width-mobile);
@@ -190,13 +191,16 @@ figcaption {
   font-size: 0.85em;
   display: table-caption;
   caption-side: bottom;
-  text-align: justify;
 }
+
+/* -------------------------------------------------------------------------- */
 
 textarea {
   background-color: #1b1c1f;
   color: var(--text-color);
 }
+
+/* -------------------------------------------------------------------------- */
 
 br-nhk-nav h1 {
   font-family: "Futura Book", var(--font-family);
@@ -204,6 +208,8 @@ br-nhk-nav h1 {
   color: var(--text-color);
   margin: 0;
 }
+
+/* -------------------------------------------------------------------------- */
 
 @media (min-width: 600px) {
   body {
@@ -215,3 +221,5 @@ br-nhk-nav h1 {
     max-width: var(--max-content-width-desktop);
   }
 }
+
+/* -------------------------------------------------------------------------- */

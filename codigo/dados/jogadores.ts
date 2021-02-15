@@ -10,8 +10,9 @@
 
 interface Jogador {
   nome: string;
-  cidade: string;
+  pais: Pais;
   estado: Estado;
+  cidade: string;
   nascimento: number;
   elo: number;
   professor_certificado: boolean;
@@ -39,6 +40,12 @@ interface Contato {
 
 enum Rede {
   facebook = "Facebook",
+  reddit = "Reddit",
+}
+
+enum Pais {
+  brasil = "Brasil",
+  portugal = "Portugal",
 }
 
 enum Estado {
@@ -76,6 +83,7 @@ enum Servidor {
   tygem = "Tygem",
   wbaduk = "WBaduk",
   foxy = "Fox Go",
+  cgs = "CGS",
 }
 
 enum Ranking {
@@ -123,8 +131,9 @@ enum Ranking {
 export const jogadores: Jogador[] = [
   {
     nome: "Philippe Fanaro",
-    cidade: "São Paulo",
+    pais: Pais.brasil,
     estado: Estado.sp,
+    cidade: "São Paulo",
     nascimento: Date.UTC(1992, 5, 27),
     elo: 2300,
     professor_certificado: true,

@@ -25,13 +25,13 @@
       <h1>Lista de Jogadores</h1>
 
       <section>
-        <h2>Se você não é cadastrado...</h2>
+        <h2>Se você não é cadastrado ainda...</h2>
 
         <p>
-          Com o formulário abaixo, você enviará informações para um moderador
-          que verificará as suas informações. Este processo mais burocrático
-          garante que os dados dos jogadores cadastrados estejam bem alinhados e
-          corretos.
+          Com o formulário abaixo, você enviará, por email, informações para um
+          moderador, que verificará as suas informações. Este processo mais
+          burocrático garante que os dados dos jogadores cadastrados estejam bem
+          alinhados e corretos.
         </p>
 
         <form id="cadastro-de-jogador">
@@ -47,28 +47,42 @@
             />
             <br />
             <label for="ultimo-nome">Último Nome</label>
-            <input type="text" name="ultimo-nome" id="ultimo-nome" required />
+            <input type="text" name="ultimo-nome" id="ultimo-nome" />
           </fieldset>
 
           <fieldset>
-            <legend>Região</legend>
+            <legend>Onde Você Mora Atualmente?</legend>
 
-            <label for="cidade">Cidade</label>
-            <input type="text" name="cidade" id="cidade" required />
+            <label for="pais">País</label>
+            <input type="text" name="pais" id="pais" />
             <br />
             <label for="estado">Estado</label>
-            <input type="text" name="estado" id="estado" required />
+            <input type="text" name="estado" id="estado" />
+            <br />
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade" />
           </fieldset>
 
           <fieldset>
-            <legend>Outros Dados</legend>
+            <legend>Contato</legend>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+            <br />
+            <label for="tel">Telefone</label>
+            <input type="tel" name="tel" id="tel" />
+            <br />
+          </fieldset>
+
+          <fieldset>
+            <legend>Outros Dados Pessoais</legend>
             <label for="nascimento">Nascimento</label>
 
             <select name="ano" id="ano">
               <option value="2015">2015</option>
               <option value="2014">2014</option>
+              <!-- TODO: Fazer isso programaticamente... -->
             </select>
-            <!-- TODO: Fazer isso programaticamente... -->
           </fieldset>
 
           <fieldset>
@@ -83,10 +97,20 @@
           </fieldset>
 
           <fieldset>
+            <legend>Perfis Online</legend>
+
+            <p>Em quais servidores você possui perfil?</p>
+
+            <!-- TODO: o usuário deveria poder adicionar N perfis -->
+          </fieldset>
+
+          <fieldset>
             <legend>Redes Sociais</legend>
 
+            <p>Em quais redes sociais você é ativo?</p>
+
             <!-- TODO: o usuário deveria poder adicionar N perfis de 
-              redes sociais -->
+                       redes sociais -->
           </fieldset>
 
           <fieldset>
@@ -100,6 +124,33 @@
 
             <label for="img-link">Link da Imagem</label>
             <input type="url" name="img-link" id="img-link" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Mensagem ao Moderador</legend>
+
+            <p>Você gostaria de dizer ao algo ao moderador?</p>
+
+            <textarea
+              name="msg-moderador"
+              id="msg-moderador"
+              cols="65"
+              rows="5"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Enviar Mensagem</legend>
+
+            <p>
+              Ao clicar no botão abaixo, seu cliente/programa de email será
+              aberto para que você possa enviar os dados preenchidos ao
+              moderador.
+            </p>
+
+            <button type="submit" id="envio">
+              <a href="mailto:philippefanaro@gmail.com">Enviar Email</a>
+            </button>
           </fieldset>
         </form>
       </section>

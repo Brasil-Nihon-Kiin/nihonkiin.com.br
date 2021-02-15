@@ -199,6 +199,20 @@ figcaption {
 /* -------------------------------------------------------------------------- */
 /* Formulários */
 
+button#envio {
+  color: var(--text-color);
+  background-color: var(--darker-cell);
+  height: 25px;
+}
+
+button#envio a {
+  color: var(--text-color);
+}
+
+fieldset {
+  margin-bottom: 15px;
+}
+
 label {
   display: inline-block;
   width: 125px;

@@ -8,6 +8,9 @@
  * cadastrador/moderador.
  */
 
+// -----------------------------------------------------------------------------
+// Modelos
+
 interface Jogador {
   nome: string;
   pais: Pais;
@@ -37,6 +40,9 @@ interface Contato {
   email?: string;
   telefone?: number;
 }
+
+// -----------------------------------------------------------------------------
+// Enumeradores
 
 enum Rede {
   facebook = "Facebook",
@@ -127,3 +133,5 @@ enum Ranking {
   k29 = -600,
   k30 = -700,
 }
+
+// -----------------------------------------------------------------------------

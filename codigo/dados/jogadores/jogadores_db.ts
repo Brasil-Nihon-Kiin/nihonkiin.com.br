@@ -1,4 +1,4 @@
-export const jogadores: Jogador[] = [
+export const jogadoresDb: Jogador[] = [
   {
     nome: "Philippe Fanaro",
     pais: Pais.brasil,

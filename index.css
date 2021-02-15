@@ -211,14 +211,21 @@ button#envio a {
 
 fieldset {
   margin-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 32px;
 }
 
-label {
+label:not(#ciencia-privaciadade) {
   display: inline-block;
   width: 125px;
   text-align: right;
   margin-right: 10px;
   margin-bottom: 15px;
+}
+
+label#ciencia-privaciadade,
+input#ciencia-privaciadade {
+  vertical-align: middle;
 }
 
 input {

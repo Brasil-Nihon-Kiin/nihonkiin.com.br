@@ -51,6 +51,9 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
         <li>
           <a href="#25-sobre-testes">2.5. Sobre Testes</a>
         </li>
+        <li>
+          <a href="#26-snippets">2.6. Snippets</a>
+        </li>
       </ul>
     </li>
   </ul>
@@ -60,11 +63,11 @@ A infraestrutura do frontend do site da Brasil Nihon Kiin, a casa do Go brasilei
 
 ## 1. O Time
 
-| Nome                        | Perfil                   | Funções               |
-| --------------------------- | ------------------------ | --------------------- |
-| Philippe Fanaro             | [psygo][psygo]           | Desenvolvedor, Editor |
-| Laércio Pereira             | [laercioskt][laercioskt] | Desenvolvedor, Editor |
-| Felipe Herman van Riemsdijk | [sagemerlin][sagemerlin] | Desenvolvedor, Editor |
+| Nome                        | Perfil                   | Funções                     |
+| --------------------------- | ------------------------ | --------------------------- |
+| Philippe Fanaro             | [psygo][psygo]           | Desenvolvedor-Chefe, Editor |
+| Laércio Pereira             | [laercioskt][laercioskt] | Desenvolvedor, Editor       |
+| Felipe Herman van Riemsdijk | [sagemerlin][sagemerlin] | Editor-Chefe                |
 
 
 [psygo]: https://github.com/psygo
@@ -120,7 +123,10 @@ O ambiente ideal atual para o desenvolvimento do site é:
 1. Abra o `index.html` no browser juntamente com o inspetor de código.
     - Recomenda-se utilizar a extensão [Live Server][live_server] para atualizar a página web ao salvar o código.
 
+> Também recomendo adicionar a fonte [Fira Code][fira_code], pois algumas das formatações feitas só fazem sentido devido às ligaduras que essa fonte faz.
 
+
+[fira_code]: https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
 [live_server]: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 [node.js]: https://nodejs.org/en/
 [prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
@@ -168,5 +174,11 @@ Testes (TDD) são sempre bons e melhoram a qualidade do produto em absoluto. Por
 
 Sendo assim, a princípio, para o frontend ou UI, testes não serão prioridade.
 
-<!-- TODO: Citar os snippets brevemente -->
-<!-- TODO: Recomendar Fira Code -->
+### 2.6. Snippets
+
+VS Code &mdash; assim como IntelliJ, onde são chamados de *Live Templates* &mdash; possui uma maneira de criar blocos de código pré-formatados. Esses blocos de código não somente servem para agilizar o desenvolvimento, mas, também, para padronizar e centralizar certos blocos de código.
+
+Você pode encontrar os *snippets* específicos deste projeto no arquivo [code.code-snippets][snippets].
+
+
+[snippets]: .vscode/code.code-snippets

@@ -4,7 +4,7 @@
 		"body": [
 			"<script src=\"../../assets/glift_1_1_2.min.js\"></script>"
 		],
-		"description": "Glift's script import for the project."
+		"description": "Import padrão do Glift."
 	},
 	"Glift SGF": {
 		"prefix": "glift_sgf",
@@ -16,6 +16,7 @@
 			"    sgf: \"${1:game-name}\",",
 			"  });",
 			"</script>"
-		]
+		],
+		"description": "Maneira padrão de se integrar um arquivo SGF ao HTML."
 	},
 }

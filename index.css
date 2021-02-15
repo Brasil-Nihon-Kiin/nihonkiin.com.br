@@ -27,6 +27,8 @@
   --max-content-width-mobile: 90vw;
   --max-content-width-desktop: 580px;
   --margin: 1rem;
+  --brighter-cell: #222222;
+  --darker-cell: #090705;
 }
 
 body {
@@ -158,12 +160,12 @@ th {
 
 tr:nth-child(odd),
 th {
-  background-color: #222222;
+  background-color: var(--brighter-cell);
 }
 
 tr:nth-child(even),
 th {
-  background-color: #090705;
+  background-color: var(--darker-cell);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -194,9 +196,33 @@ figcaption {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Formulários */
+
+label {
+  display: inline-block;
+  width: 125px;
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+  height: 20px;
+  border-radius: 7.5px;
+  padding-left: 5px;
+}
+
+select {
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+  height: 30px;
+  padding-left: 2.5px;
+}
 
 textarea {
-  background-color: #1b1c1f;
+  background-color: var(--darker-cell);
   color: var(--text-color);
 }
 

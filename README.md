@@ -167,3 +167,6 @@ Glift está adicionado à pasta `midia/` deste projeto, então, para adicioná-l
 Testes (TDD) são sempre bons e melhoram a qualidade do produto em absoluto. Porém, testes de UI tendem a ter um custo benefício extremamente menor, pois o design da UI é muito mais volátil do que a lógica de negócio tipicamente. Assim que a UI se estabiliza, testes de UI começam a ter um custo-benefício mais decente.
 
 Sendo assim, a princípio, para o frontend ou UI, testes não serão prioridade.
+
+<!-- TODO: Citar os snippets brevemente -->
+<!-- TODO: Recomendar Fira Code -->

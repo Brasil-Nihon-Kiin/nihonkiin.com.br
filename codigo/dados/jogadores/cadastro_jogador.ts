@@ -1,7 +1,7 @@
 export default class BotaoCadastroJogador extends HTMLElement {
   static readonly tag: string = "botao-cadastro-jogador";
 
-  private static readonly moderatorEmail: string = "philippefanaro@gmail.com";
+  private static readonly emailDoModerador: string = "philippefanaro@gmail.com";
 
   private static readonly template: string = `
     <button type="button" id="envio">
@@ -9,8 +9,10 @@ export default class BotaoCadastroJogador extends HTMLElement {
     </button>
   `;
 
+  private static readonly linkDeEmailInicial: string = `mailto:${BotaoCadastroJogador.emailDoModerador}?subject=Cadastro de Jogador&body=`;
+
   private concordaComFaltaDePrivacidade: boolean = false;
-  private emailLink: string = `mailto:${BotaoCadastroJogador.moderatorEmail}?subject=Cadastro de Jogador&body=`;
+  private emailLink: string = BotaoCadastroJogador.linkDeEmailInicial;
 
   constructor() {
     super();
@@ -38,15 +40,36 @@ export default class BotaoCadastroJogador extends HTMLElement {
       if (this.concordaComFaltaDePrivacidade) {
         this.montaEmailLink();
         console.log(this.emailLink);
+        this.abreEmail();
       }
     };
   };
 
+  private abreEmail = (): void => {
+    const ancoraParaEmail = <HTMLAnchorElement>(
+      this.querySelector("a#link-envia-email")
+    );
+    ancoraParaEmail.href = this.emailLink;
+    ancoraParaEmail.click();
+  };
+
   private montaEmailLink = (): void => {
+    this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
     this.adicionaPrimeiroNome();
+    this.adicionaUltimoNome();
   };
 
   private adicionaPrimeiroNome = (): void => {
-    this.emailLink += "Philippe";
+    const primeiroNomeInput = <HTMLInputElement>(
+      this.parentElement!.parentElement!.querySelector("input#primeiro-nome")
+    );
+    this.emailLink += `<p>Primeiro Nome: ${primeiroNomeInput.value}</p>`;
+  };
+
+  private adicionaUltimoNome = (): void => {
+    const ultimoNomeInput = <HTMLInputElement>(
+      this.parentElement!.parentElement!.querySelector("input#ultimo-nome")
+    );
+    this.emailLink += `<p>Ultimo Nome: ${ultimoNomeInput.value}</p>`;
   };
 }

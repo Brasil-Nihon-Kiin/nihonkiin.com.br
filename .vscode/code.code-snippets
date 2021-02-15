@@ -1,4 +1,11 @@
 {
+	"Comentário TS Divisor de Linhas": {
+		"prefix": "ts_div",
+		"body": [
+			"//------------------------------------------------------------------------------"
+		],
+		"description": "Comentário divisor de blocos de código. Utilize com parcimônia."
+	},
 	"Glift Import": {
 		"prefix": "glift_import",
 		"body": [

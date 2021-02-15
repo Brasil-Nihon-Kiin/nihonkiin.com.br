@@ -4,7 +4,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
   private static readonly emailDoModerador: string = "philippefanaro@gmail.com";
 
   private static readonly template: string = `
-    <button type="button" id="envio">
+    <button type="submit" id="envio">
       <a id="link-envia-email">Enviar Email</a>
     </button>
   `;
@@ -37,7 +37,10 @@ export default class BotaoCadastroJogador extends HTMLElement {
   private inicializaEscutaDeEnvioDeEmail = (): void => {
     const botao = <HTMLButtonElement>this.querySelector("button#envio");
     botao.onclick = (): void => {
-      if (this.concordaComFaltaDePrivacidade) {
+      if (
+        this.concordaComFaltaDePrivacidade &&
+        this.topoFormulario.checkValidity()
+      ) {
         this.montaEmailLink();
         console.log(this.emailLink);
         this.abreEmail();
@@ -55,21 +58,103 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
   private montaEmailLink = (): void => {
     this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
+
+    // Nome
     this.adicionaPrimeiroNome();
     this.adicionaUltimoNome();
+
+    // Onde você mora atualmente
+    this.adicionaPais();
+    this.adicionaEstado();
+    this.adicionaCidade();
+
+    // Contato
+    this.adicionaEmail();
+    this.adicionaTelefone();
+
+    // Foto
+    this.adicionaFoto();
+
+    // Mensagem ao Moderador
+    this.adicionaMsgAoModerador();
   };
+
+  private get topoFormulario(): HTMLFormElement {
+    return this.parentElement!.parentElement as HTMLFormElement;
+  }
+
+  //----------------------------------------------------------------------------
 
   private adicionaPrimeiroNome = (): void => {
     const primeiroNomeInput = <HTMLInputElement>(
-      this.parentElement!.parentElement!.querySelector("input#primeiro-nome")
+      this.topoFormulario.querySelector("input#primeiro-nome")
     );
     this.emailLink += `<p>Primeiro Nome: ${primeiroNomeInput.value}</p>`;
   };
 
   private adicionaUltimoNome = (): void => {
     const ultimoNomeInput = <HTMLInputElement>(
-      this.parentElement!.parentElement!.querySelector("input#ultimo-nome")
+      this.topoFormulario.querySelector("input#ultimo-nome")
     );
-    this.emailLink += `<p>Ultimo Nome: ${ultimoNomeInput.value}</p>`;
+    this.emailLink += `<p>Último Nome: ${ultimoNomeInput.value}</p>`;
   };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaPais = (): void => {
+    const paisInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#pais")
+    );
+    this.emailLink += `<p>País: ${paisInput.value}</p>`;
+  };
+
+  private adicionaEstado = (): void => {
+    const estadoInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#estado")
+    );
+    this.emailLink += `<p>Estado: ${estadoInput.value}</p>`;
+  };
+
+  private adicionaCidade = (): void => {
+    const cidadeInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#cidade")
+    );
+    this.emailLink += `<p>Cidade: ${cidadeInput.value}</p>`;
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaEmail = (): void => {
+    const emailInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#email")
+    );
+    this.emailLink += `<p>Email: ${emailInput.value}</p>`;
+  };
+
+  private adicionaTelefone = (): void => {
+    const telefoneInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#tel")
+    );
+    this.emailLink += `<p>Telefone: ${telefoneInput.value}</p>`;
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaFoto = (): void => {
+    const fotoInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#img-link")
+    );
+    this.emailLink += `<p>Link da Foto: ${fotoInput.value}</p>`;
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaMsgAoModerador = (): void => {
+    const msgAoModeradorTextarea = <HTMLTextAreaElement>(
+      this.topoFormulario.querySelector("textarea#msg-ao-moderador")
+    );
+    this.emailLink += `<p>Mensagem ao Moderador: ${msgAoModeradorTextarea.value}</p>`;
+  };
+
+  //----------------------------------------------------------------------------
 }

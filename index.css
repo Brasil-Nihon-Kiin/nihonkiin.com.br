@@ -217,7 +217,7 @@ fieldset {
   padding-right: 32px;
 }
 
-label:not(#ciencia-privaciadade) {
+label :not(#ciencia-privaciadade) {
   display: inline-block;
   width: 125px;
   text-align: right;
@@ -225,8 +225,8 @@ label:not(#ciencia-privaciadade) {
   margin-bottom: 15px;
 }
 
-label#ciencia-privaciadade,
-input#ciencia-privaciadade {
+label#ciencia-privacidade,
+input#ciencia-privacidade {
   vertical-align: middle;
 }
 

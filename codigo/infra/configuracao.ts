@@ -1,3 +1,4 @@
+import BotaoCadastroJogador from "../dados/jogadores/cadastro_jogador";
 import BrNhkNav from "../ui/nav";
 
 export default class Configuracao {
@@ -8,7 +9,7 @@ export default class Configuracao {
 
   private define = (): void => {
     customElements.define(BrNhkNav.tag, BrNhkNav);
-    customElements.define(BrNhkNav.tag, BrNhkNav);
+    customElements.define(BotaoCadastroJogador.tag, BotaoCadastroJogador);
   };
 
   private prepend = (): void => {

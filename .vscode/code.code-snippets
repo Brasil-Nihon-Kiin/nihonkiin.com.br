@@ -57,7 +57,7 @@
 	"Web Component Personalizado": {
 		"prefix": "cwb",
 		"body": [
-			"export class ${1:className} extends HTMLElement {",
+			"export default class ${1:className} extends HTMLElement {",
 			"  static readonly tag: string = \"${2:element-tag}\";",
 			"",
 			"  private static readonly template: string = `",
@@ -68,7 +68,7 @@
 			"    super();",
 			"  }",
 			"",
-			"  onConnectedCallback() {",
+			"  connectedCallback() {",
 			"    this.innerHTML = ${1:className}.template;",
 			"  }",
 			"}"

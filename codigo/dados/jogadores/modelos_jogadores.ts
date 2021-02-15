@@ -11,6 +11,11 @@
 // -----------------------------------------------------------------------------
 // Modelos
 
+/**
+ * O ID de cada jogador é implícito atualmente: será o index dele na lista de
+ * jogadores. Por isso, será necessário que os moderadores não cadastrem
+ * jogadores repetidamente.
+ */
 interface Jogador {
   nome: string;
   pais: Pais;
@@ -19,8 +24,8 @@ interface Jogador {
   nascimento: number;
   elo: number;
   professor_certificado: boolean;
-  perfis: Perfil[];
-  social: Social[];
+  perfis?: Perfil[];
+  social?: Social[];
   contato?: Contato;
   foto?: URL;
 }

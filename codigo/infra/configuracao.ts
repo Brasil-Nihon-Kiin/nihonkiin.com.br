@@ -6,7 +6,10 @@ export default class Configuracao {
     this.prepend();
   }
 
-  private define = (): void => customElements.define(BrNhkNav.tag, BrNhkNav);
+  private define = (): void => {
+    customElements.define(BrNhkNav.tag, BrNhkNav);
+    customElements.define(BrNhkNav.tag, BrNhkNav);
+  };
 
   private prepend = (): void => {
     window.addEventListener("DOMContentLoaded", (_: Event): void =>

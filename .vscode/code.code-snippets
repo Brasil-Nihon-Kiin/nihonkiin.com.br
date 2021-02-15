@@ -53,5 +53,25 @@
 			""
 		],
 		"description": "O esqueleto inicial de um post da Brasil Nihon Kiin."
+	},
+	"Web Component Personalizado": {
+		"prefix": "cwb",
+		"body": [
+			"export class ${1:className} extends HTMLElement {",
+			"  static readonly tag: string = \"${2:element-tag}\";",
+			"",
+			"  private static readonly template: string = `",
+			"    ${3:template}",
+			"  `;",
+			"",
+			"  constructor() {",
+			"    super();",
+			"  }",
+			"",
+			"  onConnectedCallback() {",
+			"    this.innerHTML = ${1:className}.template;",
+			"  }",
+			"}"
+		]
 	}
 }

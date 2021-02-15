@@ -19,4 +19,39 @@
 		],
 		"description": "Maneira padrão de se integrar um arquivo SGF ao HTML."
 	},
+	"Esqueleto de Post": {
+		"prefix": "brhnk_post",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"pt-br\">",
+			"  <head>",
+			"    <title>${1:title}</title>",
+			"",
+			"    <meta charset=\"UTF-8\" />",
+			"    <meta name=\"viewport\" content=\"width=device-width\" />",
+			"",
+			"    <meta name=\"author\" content=\"Philippe Fanaro\" />",
+			"    <meta name=\"description\" content=\"${1:title}\" />",
+			"",
+			"    <meta property=\"og:image\" content=\"../../../midia/favicon.png\" />",
+			"    <meta property=\"og:description\" content=\"${1:title}\" />",
+			"    <meta property=\"og:title\" content=\"${1:title}\" />",
+			"    <meta property=\"og:site_name\" content=\"Brasil Nihon Kiin\" />",
+			"    <meta property=\"og:type\" content=\"blog\" />",
+			"",
+			"    <link rel=\"stylesheet\" href=\"../../../index.css\" />",
+			"    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../../midia/favicon.png\" />",
+			"",
+			"    <script src=\"../../index.js\"></script>",
+			"  </head>",
+			"  <body>",
+			"    <article>",
+			"      <h1>${1:title}</h1>",
+			"    </article>",
+			"  </body>",
+			"</html>",
+			""
+		],
+		"description": "O esqueleto inicial de um post da Brasil Nihon Kiin."
+	}
 }

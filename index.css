@@ -169,6 +169,7 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Mídias Visuais */
 
 iframe {
   max-width: var(--max-content-width-mobile);
@@ -227,6 +228,7 @@ textarea {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Custom Web Components */
 
 br-nhk-nav h1 {
   font-family: "Futura Book", var(--font-family);
@@ -236,6 +238,7 @@ br-nhk-nav h1 {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Telas com maiores larguras */
 
 @media (min-width: 600px) {
   body {

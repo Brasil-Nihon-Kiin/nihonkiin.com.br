@@ -72,6 +72,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.adicionaEmail();
     this.adicionaTelefone();
 
+    // Outros Dados Pessoais
+    this.adicionaNascimento();
+
     // Foto
     this.adicionaFoto();
 
@@ -83,20 +86,27 @@ export default class BotaoCadastroJogador extends HTMLElement {
     return this.parentElement!.parentElement as HTMLFormElement;
   }
 
+  private adicionaParagrafoHTML = (campoPreenchido: string): string =>
+    "<p>" + campoPreenchido + "</p>";
+
   //----------------------------------------------------------------------------
 
   private adicionaPrimeiroNome = (): void => {
     const primeiroNomeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#primeiro-nome")
     );
-    this.emailLink += `<p>Primeiro Nome: ${primeiroNomeInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Primeiro Nome: ${primeiroNomeInput.value}`
+    );
   };
 
   private adicionaUltimoNome = (): void => {
     const ultimoNomeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#ultimo-nome")
     );
-    this.emailLink += `<p>Último Nome: ${ultimoNomeInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Último Nome: ${ultimoNomeInput.value}`
+    );
   };
 
   //----------------------------------------------------------------------------
@@ -105,21 +115,25 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const paisInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#pais")
     );
-    this.emailLink += `<p>País: ${paisInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(`País: ${paisInput.value}`);
   };
 
   private adicionaEstado = (): void => {
     const estadoInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#estado")
     );
-    this.emailLink += `<p>Estado: ${estadoInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Estado: ${estadoInput.value}`
+    );
   };
 
   private adicionaCidade = (): void => {
     const cidadeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#cidade")
     );
-    this.emailLink += `<p>Cidade: ${cidadeInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Cidade: ${cidadeInput.value}`
+    );
   };
 
   //----------------------------------------------------------------------------
@@ -128,14 +142,27 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const emailInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#email")
     );
-    this.emailLink += `<p>Email: ${emailInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(`Email: ${emailInput.value}`);
   };
 
   private adicionaTelefone = (): void => {
     const telefoneInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#tel")
     );
-    this.emailLink += `<p>Telefone: ${telefoneInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Telefone: ${telefoneInput.value}`
+    );
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaNascimento = (): void => {
+    const nascimentoInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#nascimento")
+    );
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Data de Nascimento: ${nascimentoInput.value}`
+    );
   };
 
   //----------------------------------------------------------------------------
@@ -144,7 +171,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const fotoInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#img-link")
     );
-    this.emailLink += `<p>Link da Foto: ${fotoInput.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Link da Foto: ${fotoInput.value}`
+    );
   };
 
   //----------------------------------------------------------------------------
@@ -153,7 +182,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const msgAoModeradorTextarea = <HTMLTextAreaElement>(
       this.topoFormulario.querySelector("textarea#msg-ao-moderador")
     );
-    this.emailLink += `<p>Mensagem ao Moderador: ${msgAoModeradorTextarea.value}</p>`;
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Mensagem ao Moderador: ${msgAoModeradorTextarea.value}`
+    );
   };
 
   //----------------------------------------------------------------------------

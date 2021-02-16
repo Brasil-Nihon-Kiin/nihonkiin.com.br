@@ -62,7 +62,7 @@
 		"description": "O esqueleto inicial de um post da Brasil Nihon Kiin."
 	},
 	"Web Component Personalizado": {
-		"prefix": "cwb",
+		"prefix": "cwc",
 		"body": [
 			"export default class ${1:className} extends HTMLElement {",
 			"  static readonly tag: string = \"${2:element-tag}\";",
@@ -79,6 +79,7 @@
 			"    this.innerHTML = ${1:className}.template;",
 			"  }",
 			"}"
-		]
+		],
+		"description": "Componente web personalizado."
 	}
 }

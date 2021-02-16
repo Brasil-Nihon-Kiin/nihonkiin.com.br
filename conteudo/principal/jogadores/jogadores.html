@@ -84,11 +84,16 @@
             <legend>Outros Dados Pessoais</legend>
             <label for="nascimento">Nascimento</label>
 
-            <select name="ano" id="ano">
-              <option value="2015">2015</option>
-              <option value="2014">2014</option>
-              <!-- TODO: Fazer isso programaticamente... -->
-            </select>
+            <input
+              type="text"
+              name="nascimento"
+              id="nascimento"
+              maxlength="10"
+              placeholder="DD/MM/AAAA"
+              pattern="([0-9]{2})\/([0-9]{2})\/([0-9]{4})"
+              oninvalid="setCustomValidity('Por favor, digite uma data de nascimento válida.')"
+              oninput="setCustomValidity('')"
+            />
           </fieldset>
 
           <fieldset>

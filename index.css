@@ -227,7 +227,8 @@ fieldset p {
   margin-top: var(--margin-top-form-cadastro-jogador);
 }
 
-label:not(#ciencia-privacidade) {
+label:not(#ciencia-privacidade),
+perfis-servidores select {
   display: inline-block;
   width: 125px;
   text-align: right;

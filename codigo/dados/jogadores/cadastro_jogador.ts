@@ -59,35 +59,35 @@ export default class BotaoCadastroJogador extends HTMLElement {
   private montaEmailLink = (): void => {
     this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
 
-    // Nome
+    // 1. Nome
     this.adicionaPrimeiroNome();
     this.adicionaUltimoNome();
 
-    // Onde você mora atualmente
+    // 2. Onde você mora atualmente
     this.adicionaPais();
     this.adicionaEstado();
     this.adicionaCidade();
 
-    // Contato
+    // 3. Contato
     this.adicionaEmail();
     this.adicionaTelefone();
 
-    // Outros Dados Pessoais
+    // 4. Outros Dados Pessoais
     this.adicionaNascimento();
 
-    // Nível
+    // 5. Nível
     this.adicionaNivel();
 
-    // Foto
+    // 6. Foto
     this.adicionaFoto();
 
-    // Perfis Online
+    // 7. Perfis Online
     this.adicionaPerfisOnline();
 
-    // Redes Sociais
+    // 8. Redes Sociais
     this.adicionaRedesSociais();
 
-    // Mensagem ao Moderador
+    // 9. Mensagem ao Moderador
     this.adicionaMsgAoModerador();
   };
 

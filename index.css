@@ -295,6 +295,9 @@ br-nhk-nav h1 {
 /* Telas com maiores larguras */
 
 @media (min-width: 600px) {
+  /* ------------------------------------------------------------------------ */
+  /* Configurações Gerais */
+
   body {
     max-width: var(--max-content-width-desktop);
   }
@@ -311,6 +314,8 @@ br-nhk-nav h1 {
   perfis-servidores select {
     width: 125px;
   }
+
+  /* ------------------------------------------------------------------------ */
 }
 
 /* -------------------------------------------------------------------------- */

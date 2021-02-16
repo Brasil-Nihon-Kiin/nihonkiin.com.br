@@ -29,6 +29,7 @@
   --margin: 1rem;
   --brighter-cell: #222222;
   --darker-cell: #090705;
+  --margin-top-form-cadastro-jogador: 15px;
 }
 
 body {
@@ -174,7 +175,7 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Mídias Visuais */
+/* Mídias Visuais: Imagens, Vídeos, legendas, etc. */
 
 iframe {
   max-width: var(--max-content-width-mobile);
@@ -202,7 +203,7 @@ figcaption {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Formulários */
+/* Formulário de Cadastro de Jogador */
 
 button#envio {
   color: var(--text-color);
@@ -216,18 +217,24 @@ button#envio a {
 
 fieldset {
   margin-bottom: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 32px;
+  padding-bottom: 22px;
 }
 
-label :not(#ciencia-privaciadade) {
+fieldset p {
+  padding-top: 0px;
+  margin-top: var(--margin-top-form-cadastro-jogador);
+}
+
+label:not(#ciencia-privacidade) {
   display: inline-block;
   width: 125px;
   text-align: right;
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-top: var(--margin-top-form-cadastro-jogador);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 label#ciencia-privacidade,

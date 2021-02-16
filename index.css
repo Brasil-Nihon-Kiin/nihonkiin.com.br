@@ -262,6 +262,13 @@ textarea {
   color: var(--text-color);
 }
 
+button#adiciona-campo-de-rede-social {
+  margin-left: 22px;
+  margin-top: 15px;
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+}
+
 /* -------------------------------------------------------------------------- */
 /* Custom Web Components */
 

@@ -1,5 +1,6 @@
 import BotaoCadastroJogador from "../dados/jogadores/cadastro_jogador";
 import BrNhkNav from "../ui/nav";
+import RedesSociais from "../ui/redes_sociais";
 
 export default class Configuracao {
   constructor() {
@@ -10,6 +11,7 @@ export default class Configuracao {
   private define = (): void => {
     customElements.define(BrNhkNav.tag, BrNhkNav);
     customElements.define(BotaoCadastroJogador.tag, BotaoCadastroJogador);
+    customElements.define(RedesSociais.tag, RedesSociais);
   };
 
   private prepend = (): void => {

@@ -186,21 +186,36 @@ export default class BotaoCadastroJogador extends HTMLElement {
   //----------------------------------------------------------------------------
 
   private adicionaPerfisOnline = (): void => {
-    
+    const servidores: NodeListOf<HTMLSelectElement> = this.topoFormulario.querySelectorAll(
+      "perfis-servidores select"
+    );
+    const perfis: NodeListOf<HTMLInputElement> = this.topoFormulario.querySelectorAll(
+      "perfis-servidores input"
+    );
+
+    let parServidorPerfil: string = "";
+    for (let i = 0; i < servidores.length; i++) {
+      const servidor: string = servidores[i].value;
+      const perfil: string = perfis[i].value;
+      parServidorPerfil += `<li>(${servidor}, ${perfil})</li>`;
+    }
+
+    this.emailLink += `<div><p>Perfis Online:</p><ol>${parServidorPerfil}</ol></div>`;
   };
 
   //----------------------------------------------------------------------------
 
   private adicionaRedesSociais = (): void => {
-    const elementosDeRedesSociais = this.topoFormulario.querySelectorAll(
+    const elementosDeRedesSociais: NodeListOf<HTMLInputElement> = this.topoFormulario.querySelectorAll(
       "redes-sociais input"
     );
 
     let redesSociais: string = "";
-    elementosDeRedesSociais.forEach((redeSocialInput: Element): void => {
-      redesSociais +=
-        "<li>" + (redeSocialInput as HTMLInputElement).value + "</li>";
-    });
+    elementosDeRedesSociais.forEach(
+      (redeSocialInput: HTMLInputElement): void => {
+        redesSociais += "<li>" + redeSocialInput.value + "</li>";
+      }
+    );
 
     this.emailLink += `<div><p>Redes Sociais:</p><ol>${redesSociais}</ol></div>`;
   };

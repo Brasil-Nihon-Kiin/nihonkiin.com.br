@@ -81,6 +81,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     // Foto
     this.adicionaFoto();
 
+    // Redes Sociais
+    this.adicionaRedesSociais();
+
     // Mensagem ao Moderador
     this.adicionaMsgAoModerador();
   };
@@ -175,6 +178,22 @@ export default class BotaoCadastroJogador extends HTMLElement {
       this.topoFormulario.querySelector("input#nivel")
     );
     this.emailLink += this.adicionaParagrafoHTML(`Nível: ${nivelInput.value}`);
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaRedesSociais = (): void => {
+    const elementosDeRedesSociais = this.topoFormulario.querySelectorAll(
+      "redes-sociais input"
+    );
+
+    let redesSociais: string = "";
+    elementosDeRedesSociais.forEach((redeSocialInput: Element): void => {
+      redesSociais +=
+        "<li>" + (redeSocialInput as HTMLInputElement).value + "</li>";
+    });
+
+    this.emailLink += `<div><p>Redes Sociais:</p><ol>${redesSociais}</ol></div>`;
   };
 
   //----------------------------------------------------------------------------

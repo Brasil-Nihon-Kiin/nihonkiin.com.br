@@ -230,7 +230,7 @@ fieldset p {
 label:not(#ciencia-privacidade),
 perfis-servidores select {
   display: inline-block;
-  width: 125px;
+  width: 75px;
   text-align: right;
   margin-right: 10px;
   margin-top: var(--margin-top-form-cadastro-jogador);
@@ -266,6 +266,7 @@ select {
 textarea {
   background-color: var(--darker-cell);
   color: var(--text-color);
+  width: 100%;
 }
 
 button#adiciona-campo-de-rede-social,
@@ -301,6 +302,14 @@ br-nhk-nav h1 {
   img,
   iframe {
     max-width: var(--max-content-width-desktop);
+  }
+
+  /* ------------------------------------------------------------------------ */
+  /* Formulário de Cadastro de Jogador */
+
+  label:not(#ciencia-privacidade),
+  perfis-servidores select {
+    width: 125px;
   }
 }
 

@@ -49,7 +49,7 @@
 			"    <link rel=\"stylesheet\" href=\"../../../index.css\" />",
 			"    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../../midia/favicon.png\" />",
 			"",
-			"    <script src=\"../../index.js\"></script>",
+			"    <script src=\"../../../index.js\"></script>",
 			"  </head>",
 			"  <body>",
 			"    <article>",

@@ -2,10 +2,7 @@ export default class RedesSociais extends HTMLElement {
   static readonly tag: string = "redes-sociais";
 
   private static readonly template: string = `
-    <div id="campos">
-      <label for="rede-social-1">Rede Social #1</label>
-      <input type="url" name="rede-social-1" id="rede-social-1" />
-    </div>
+    <div id="campos"></div>
     
     <button type="button" id="adiciona-campo-de-rede-social">+</button>
   `;
@@ -19,6 +16,8 @@ export default class RedesSociais extends HTMLElement {
   connectedCallback() {
     this.innerHTML = RedesSociais.template;
 
+    this.adicionaNovoCampoDeRedeSocial();
+
     this.inicializaEscutaDeAdicaoDeCampoDeRedeSocial();
   }
 
@@ -31,22 +30,39 @@ export default class RedesSociais extends HTMLElement {
       this.adicionaNovoCampoDeRedeSocial();
   };
 
-  private adicionaNovoCampoDeRedeSocial = (): void => {
-    this.index++;
-    const campoID: string = `rede-social-${this.index}`;
+  private get camposDiv(): HTMLDivElement {
+    return <HTMLDivElement>this.querySelector("div#campos");
+  }
 
+  private get campoID(): string {
+    return `rede-social-${this.index}`;
+  }
+
+  private adicionaNovoCampoDeRedeSocial = (): void => {
+    this.adicionaLegenda();
+    this.adicionaNovoCampo();
+    this.adicionaLineBreak();
+
+    this.index++;
+  };
+
+  private adicionaLegenda = (): void => {
     const novaLegenda: HTMLLabelElement = document.createElement("label");
-    novaLegenda.setAttribute("for", campoID);
+    novaLegenda.setAttribute("for", this.campoID);
     novaLegenda.innerText = `Rede Social #${this.index}`;
 
+    this.camposDiv.append(novaLegenda);
+  };
+
+  private adicionaNovoCampo = (): void => {
     const novoCampo: HTMLInputElement = document.createElement("input");
     novoCampo.type = "url";
-    novoCampo.name = campoID;
-    novoCampo.id = campoID;
+    novoCampo.name = this.campoID;
+    novoCampo.id = this.campoID;
 
-    const camposDiv = <HTMLDivElement>this.querySelector("div#campos")!;
-    camposDiv.append(document.createElement("br"));
-    camposDiv.append(novaLegenda);
-    camposDiv.append(novoCampo);
+    this.camposDiv.append(novoCampo);
   };
+
+  private adicionaLineBreak = (): void =>
+    this.camposDiv.append(document.createElement("br"));
 }

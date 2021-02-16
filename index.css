@@ -262,7 +262,8 @@ textarea {
   color: var(--text-color);
 }
 
-button#adiciona-campo-de-rede-social {
+button#adiciona-campo-de-rede-social,
+button#adiciona-campo-de-perfil-servidor {
   margin-left: 22px;
   margin-top: 15px;
   background-color: var(--darker-cell);

@@ -16,7 +16,7 @@
  * jogadores. Por isso, será necessário que os moderadores não cadastrem
  * jogadores repetidamente.
  */
-interface Jogador {
+export default interface Jogador {
   nome: string;
   pais: Pais;
   estado: Estado;
@@ -30,18 +30,18 @@ interface Jogador {
   foto?: URL;
 }
 
-interface Perfil {
+export interface Perfil {
   servidor: Servidor;
   nome: string;
   ranking: Ranking;
 }
 
-interface Social {
+export interface Social {
   rede: Rede;
   perfil: URL;
 }
 
-interface Contato {
+export interface Contato {
   email?: string;
   telefone?: number;
 }
@@ -49,17 +49,17 @@ interface Contato {
 // -----------------------------------------------------------------------------
 // Enumeradores
 
-enum Rede {
+export enum Rede {
   facebook = "Facebook",
   reddit = "Reddit",
 }
 
-enum Pais {
+export enum Pais {
   brasil = "Brasil",
   portugal = "Portugal",
 }
 
-enum Estado {
+export enum Estado {
   acre = "AC",
   alagoas = "AL",
   amapa = "AP",
@@ -88,7 +88,7 @@ enum Estado {
   tocantins = "TO",
 }
 
-enum Servidor {
+export enum Servidor {
   ogs = "OGS",
   kgs = "KGS",
   tygem = "Tygem",
@@ -97,7 +97,7 @@ enum Servidor {
   cgs = "CGS",
 }
 
-enum Ranking {
+export enum Ranking {
   d9 = 3100,
   d8 = 3000,
   d7 = 2900,

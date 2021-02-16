@@ -1,3 +1,11 @@
+import Jogador, {
+  Estado,
+  Pais,
+  Ranking,
+  Rede,
+  Servidor,
+} from "./modelos_jogadores";
+
 export const jogadoresDb: Jogador[] = [
   {
     nome: "Philippe Fanaro",

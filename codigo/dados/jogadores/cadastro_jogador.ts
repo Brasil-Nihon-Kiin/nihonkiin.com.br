@@ -9,9 +9,11 @@ export default class BotaoCadastroJogador extends HTMLElement {
     </button>
   `;
 
-  private static readonly linkDeEmailInicial: string = `mailto:${BotaoCadastroJogador.emailDoModerador}?subject=Cadastro de Jogador&body=`;
+  private static readonly linkDeEmailInicial: string = `mailto:${BotaoCadastroJogador.emailDoModerador}?body=`;
+  private static readonly assuntoDeEmailInicial: string = `&subject=Cadastro de Jogador: `;
 
   private concordaComFaltaDePrivacidade: boolean = false;
+  private assunto: string = BotaoCadastroJogador.assuntoDeEmailInicial;
   private emailLink: string = BotaoCadastroJogador.linkDeEmailInicial;
 
   constructor() {
@@ -42,7 +44,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
         this.topoFormulario.checkValidity()
       ) {
         this.montaEmailLink();
-        console.log(this.emailLink);
+        this.emailLink += this.assunto;
         this.abreEmail();
       }
     };
@@ -58,6 +60,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
   private montaEmailLink = (): void => {
     this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
+    this.assunto = BotaoCadastroJogador.assuntoDeEmailInicial;
 
     // 1. Nome
     this.adicionaPrimeiroNome();
@@ -110,6 +113,8 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.emailLink += this.adicionaParagrafoHTML(
       `Primeiro Nome: ${primeiroNomeInput.value}`
     );
+
+    this.assunto += primeiroNomeInput.value;
   };
 
   private adicionaUltimoNome = (): void => {
@@ -119,6 +124,8 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.emailLink += this.adicionaParagrafoHTML(
       `Último Nome: ${ultimoNomeInput.value}`
     );
+
+    this.assunto += " " + ultimoNomeInput.value;
   };
 
   //----------------------------------------------------------------------------
@@ -249,8 +256,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
   private adicionaMsgDeAjudaAoModerador = (): void => {
     this.emailLink += this.adicionaParagrafoHTML(
-      `Ao moderador: para uma visualização mais agradável, 
-      salve o texto acima como um arquivo HTML e abra-o em um browser.`
+      "Ao moderador: para uma visualização mais agradável, salve o texto acima como um arquivo HTML e abra-o em um browser."
     );
   };
 }

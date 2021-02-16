@@ -89,6 +89,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
     // 9. Mensagem ao Moderador
     this.adicionaMsgAoModerador();
+
+    // Mensagem final de ajuda ao moderador
+    this.adicionaMsgDeAjudaAoModerador();
   };
 
   private get topoFormulario(): HTMLFormElement {
@@ -243,4 +246,11 @@ export default class BotaoCadastroJogador extends HTMLElement {
   };
 
   //----------------------------------------------------------------------------
+
+  private adicionaMsgDeAjudaAoModerador = (): void => {
+    this.emailLink += this.adicionaParagrafoHTML(
+      `Ao moderador: para uma visualização mais agradável, 
+      salve o texto acima como um arquivo HTML e abra-o em um browser.`
+    );
+  };
 }

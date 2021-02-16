@@ -185,7 +185,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
   //----------------------------------------------------------------------------
 
-  private adicionaPerfisOnline = (): void => {};
+  private adicionaPerfisOnline = (): void => {
+    
+  };
 
   //----------------------------------------------------------------------------
 

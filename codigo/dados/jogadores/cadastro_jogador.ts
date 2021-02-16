@@ -81,6 +81,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     // Foto
     this.adicionaFoto();
 
+    // Perfis Online
+    this.adicionaPerfisOnline();
+
     // Redes Sociais
     this.adicionaRedesSociais();
 
@@ -179,6 +182,10 @@ export default class BotaoCadastroJogador extends HTMLElement {
     );
     this.emailLink += this.adicionaParagrafoHTML(`Nível: ${nivelInput.value}`);
   };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaPerfisOnline = (): void => {};
 
   //----------------------------------------------------------------------------
 

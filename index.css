@@ -238,6 +238,11 @@ perfis-servidores select {
   padding-bottom: 0px;
 }
 
+perfis-servidores select {
+  border-radius: 7.5px;
+  height: 25px;
+}
+
 label#ciencia-privacidade,
 input#ciencia-privacidade {
   vertical-align: middle;
@@ -269,6 +274,10 @@ button#adiciona-campo-de-perfil-servidor {
   margin-top: 15px;
   background-color: var(--darker-cell);
   color: var(--text-color);
+}
+
+button#adiciona-campo-de-perfil-servidor {
+  margin-left: 0px;
 }
 
 /* -------------------------------------------------------------------------- */

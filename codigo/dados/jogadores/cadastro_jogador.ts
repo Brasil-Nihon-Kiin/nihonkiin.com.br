@@ -75,6 +75,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
     // Outros Dados Pessoais
     this.adicionaNascimento();
 
+    // Nível
+    this.adicionaNivel();
+
     // Foto
     this.adicionaFoto();
 
@@ -163,6 +166,15 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.emailLink += this.adicionaParagrafoHTML(
       `Data de Nascimento: ${nascimentoInput.value}`
     );
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaNivel = (): void => {
+    const nivelInput = <HTMLInputElement>(
+      this.topoFormulario.querySelector("input#nivel")
+    );
+    this.emailLink += this.adicionaParagrafoHTML(`Nível: ${nivelInput.value}`);
   };
 
   //----------------------------------------------------------------------------

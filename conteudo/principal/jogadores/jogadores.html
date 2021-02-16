@@ -39,12 +39,7 @@
             <legend>Nome</legend>
 
             <label for="primeiro-nome">Primeiro Nome</label>
-            <input
-              type="text"
-              name="primeiro-nome"
-              id="primeiro-nome"
-              required
-            />
+            <input type="text" name="primeiro-nome" id="primeiro-nome" />
             <br />
             <label for="ultimo-nome">Último Nome</label>
             <input type="text" name="ultimo-nome" id="ultimo-nome" />
@@ -98,13 +93,29 @@
 
           <fieldset>
             <legend>Nível</legend>
+
+            <p>
+              Exemplos de níveis válidos: <code>30k</code>, <code>5k</code>,
+              <code>1d</code>, <code>9d</code>.
+            </p>
+
+            <p>
+              Se você não sabe o seu nível, simplesmente digite
+              <code>30k</code>, que é o nível de iniciantes.
+            </p>
+
             <label for="nivel">Nível</label>
 
-            <select name="nivel" id="nivel">
-              <option value="-">&mdash;</option>
-              <option value="k10">10k</option>
-              <option value="d1">1d</option>
-            </select>
+            <input
+              type="text"
+              name="nivel"
+              id="nivel"
+              maxlength="10"
+              placeholder="30-1k ou 1-9d"
+              pattern="(([1-3]?[1-9]|10|20|30)k)|([1-9]d)"
+              oninvalid="setCustomValidity('Por favor, digite um nível de Go válido.')"
+              oninput="setCustomValidity('')"
+            />
           </fieldset>
 
           <fieldset>

@@ -78,6 +78,11 @@ ol li {
   padding-bottom: 10px;
 }
 
+code {
+  font-size: 14px;
+  color: #c26f79;
+}
+
 /* -------------------------------------------------------------------------- */
 /* <div>s da página inicial */
 

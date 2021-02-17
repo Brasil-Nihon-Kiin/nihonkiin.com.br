@@ -21,19 +21,22 @@ export default interface Jogador {
   pais: Pais;
   estado: Estado;
   cidade: string;
+  contato?: Contato;
   nascimento: number;
   elo: number;
-  professor_certificado: boolean;
+  foto?: URL;
   perfis?: Perfil[];
   social?: Social[];
-  contato?: Contato;
-  foto?: URL;
+  /**
+   * O campo [[`professor_certificado`]] deve ser preenchido com informação da
+   * Nihon Kiin e não advinda do formulário.
+   */
+  professor_certificado: boolean;
 }
 
 export interface Perfil {
   servidor: Servidor;
   nome: string;
-  ranking: Ranking;
 }
 
 export interface Social {

@@ -1,42 +1,34 @@
-import Jogador, {
-  Estado,
-  Pais,
-  Ranking,
-  Rede,
-  Servidor,
-} from "./modelos_jogadores";
+import Jogador, { Estado, Pais, Rede, Servidor } from "./modelos_jogadores";
 
-export const jogadoresDb: Jogador[] = [
+export const jogadoresDB: Jogador[] = [
   {
     nome: "Philippe Fanaro",
     pais: Pais.brasil,
     estado: Estado.sp,
     cidade: "São Paulo",
+    contato: {
+      email: "philippefanaro@gmail.com",
+      telefone: 5511970286739,
+    },
     nascimento: Date.UTC(1992, 5, 27),
     elo: 2300,
-    professor_certificado: true,
+    foto: new URL("https://imgur.com/gallery/YtxsVTy"),
     perfis: [
       {
         servidor: Servidor.ogs,
         nome: "psygo",
-        ranking: Ranking.k1,
       },
       {
         servidor: Servidor.kgs,
         nome: "psygo",
-        ranking: Ranking.d1,
       },
     ],
     social: [
       {
         rede: Rede.facebook,
-        perfil: new URL("philippe.fanaro"),
+        perfil: new URL("https://facebook.com/philippe.fanaro"),
       },
     ],
-    contato: {
-      email: "philippefanaro@gmail.com",
-      telefone: 5511970286739,
-    },
-    foto: new URL("https://imgur.com/gallery/YtxsVTy"),
+    professor_certificado: true,
   },
 ];

@@ -14,7 +14,8 @@ export default class TabelaJogadores extends HTMLElement {
         <th>Email</th>
         <th>Telefone</th>
         <th>Data de Nascimento</th>
-        <th>Nivel | Elo</th>
+        <th>Nível | Elo</th>
+        <th>Foto</th>
       </thead>
       <tbody></tbody>
     </table>
@@ -57,6 +58,12 @@ export default class TabelaJogadores extends HTMLElement {
 
       // 5. Nível
       this.adicionaNivel();
+
+      // 6. Foto
+      this.adicionaCelulaFoto();
+
+      // 7. Perfis Online
+
 
       corpoTabela.append(this.linhaAtual);
     });
@@ -115,10 +122,15 @@ export default class TabelaJogadores extends HTMLElement {
     const celulaTelefone: HTMLTableCellElement = <HTMLTableCellElement>(
       document.createElement("td")
     );
-    celulaTelefone.innerHTML =
+    const telefone: string =
       this.jogadorAtual.contato?.telefone == null
         ? TabelaJogadores.hyphen
-        : `<a href="tel:+${this.jogadorAtual.contato?.telefone.toString()}">${this.jogadorAtual.contato?.telefone.toString()}</a>`;
+        : this.jogadorAtual.contato?.telefone.toString();
+
+    celulaTelefone.innerHTML =
+      telefone == TabelaJogadores.hyphen
+        ? TabelaJogadores.hyphen
+        : `<a href="tel:+${telefone}">${telefone}</a>`;
     this.linhaAtual.append(celulaTelefone);
   };
 
@@ -128,10 +140,13 @@ export default class TabelaJogadores extends HTMLElement {
     const celulaNascimento: HTMLTableCellElement = <HTMLTableCellElement>(
       document.createElement("td")
     );
+
     const dataNascimento: Date = new Date(this.jogadorAtual.nascimento);
-    celulaNascimento.innerHTML = `${
-      dataNascimento.getDate() + 1
-    }-${dataNascimento.getMonth()}-${dataNascimento.getFullYear()}`;
+    const dia: number = dataNascimento.getDate() + 1;
+    const mes: number = dataNascimento.getMonth();
+    const ano: number = dataNascimento.getFullYear();
+
+    celulaNascimento.innerHTML = `${dia}-${mes}-${ano}`;
     this.linhaAtual.append(celulaNascimento);
   };
 
@@ -149,4 +164,20 @@ export default class TabelaJogadores extends HTMLElement {
 
     this.linhaAtual.append(celulaNivel);
   };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaCelulaFoto = (): void => {
+    const celulaFoto: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    celulaFoto.innerHTML = `<a href="${this.jogadorAtual.foto?.href}">Link</a>`;
+    this.linhaAtual.append(celulaFoto);
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaCelulaPerfisOnline = (): void => {
+    
+  }
 }

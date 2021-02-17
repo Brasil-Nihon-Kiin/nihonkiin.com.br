@@ -282,7 +282,14 @@ button#adiciona-campo-de-perfil-servidor {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. Custom Web Components */
+/* 7. Tabela de Jogadores */
+
+tabela-jogadores .perfis {
+  line-height: 30px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. Nav do Site */
 
 br-nhk-nav h1 {
   font-family: "Futura Book", var(--font-family);
@@ -292,11 +299,11 @@ br-nhk-nav h1 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 8. Telas com maiores larguras */
+/* 9. Telas com maiores larguras */
 
 @media (min-width: 600px) {
   /* ------------------------------------------------------------------------ */
-  /* 8.1. Configurações Gerais */
+  /* 9.1. Configurações Gerais */
 
   body {
     max-width: var(--max-content-width-desktop);
@@ -308,7 +315,7 @@ br-nhk-nav h1 {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* 8.2. Formulário de Cadastro de Jogador */
+  /* 9.2. Formulário de Cadastro de Jogador */
 
   label:not(#ciencia-privacidade),
   perfis-servidores select {

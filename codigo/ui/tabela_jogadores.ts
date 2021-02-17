@@ -1,5 +1,5 @@
 import { jogadoresDB } from "../dados/jogadores/jogadores_db";
-import Jogador from "../dados/jogadores/modelos_jogadores";
+import Jogador, { Perfil } from "../dados/jogadores/modelos_jogadores";
 
 export default class TabelaJogadores extends HTMLElement {
   static readonly tag: string = "tabela-jogadores";
@@ -14,8 +14,9 @@ export default class TabelaJogadores extends HTMLElement {
         <th>Email</th>
         <th>Telefone</th>
         <th>Data de Nascimento</th>
-        <th>Nível | Elo</th>
+        <th>Nível e Elo</th>
         <th>Foto</th>
+        <th>Perfis Online</th>
       </thead>
       <tbody></tbody>
     </table>
@@ -63,7 +64,7 @@ export default class TabelaJogadores extends HTMLElement {
       this.adicionaCelulaFoto();
 
       // 7. Perfis Online
-
+      this.adicionaCelulaPerfisOnline();
 
       corpoTabela.append(this.linhaAtual);
     });
@@ -111,10 +112,17 @@ export default class TabelaJogadores extends HTMLElement {
     const celulaEmail: HTMLTableCellElement = <HTMLTableCellElement>(
       document.createElement("td")
     );
-    celulaEmail.innerHTML =
+
+    const email =
       this.jogadorAtual.contato?.email == null
         ? TabelaJogadores.hyphen
-        : `<a href="mailto:${this.jogadorAtual.contato?.email}">${this.jogadorAtual.contato?.email}</a>`;
+        : this.jogadorAtual.contato?.email;
+    const emailSeparado = email.split("@");
+
+    celulaEmail.innerHTML =
+      email == TabelaJogadores.hyphen
+        ? TabelaJogadores.hyphen
+        : `<a href="mailto:${email}">${emailSeparado[0]}<br/>@${emailSeparado[1]}</a>`;
     this.linhaAtual.append(celulaEmail);
   };
 
@@ -160,7 +168,7 @@ export default class TabelaJogadores extends HTMLElement {
     const elo: number = this.jogadorAtual.nivel.elo;
     const rank: string = this.jogadorAtual.nivel.rank;
 
-    celulaNivel.innerHTML = `${rank} | ${elo}`;
+    celulaNivel.innerHTML = `${rank} <br /> ${elo}`;
 
     this.linhaAtual.append(celulaNivel);
   };
@@ -171,13 +179,24 @@ export default class TabelaJogadores extends HTMLElement {
     const celulaFoto: HTMLTableCellElement = <HTMLTableCellElement>(
       document.createElement("td")
     );
-    celulaFoto.innerHTML = `<a href="${this.jogadorAtual.foto?.href}">Link</a>`;
+    celulaFoto.innerHTML = `<a href="${this.jogadorAtual.foto?.href}">Link da Foto</a>`;
     this.linhaAtual.append(celulaFoto);
   };
 
   //----------------------------------------------------------------------------
 
   private adicionaCelulaPerfisOnline = (): void => {
-    
-  }
+    const celulaPerfis: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    celulaPerfis.className = "perfis";
+
+    let perfis: string = "";
+    this.jogadorAtual?.perfis?.forEach((perfil: Perfil) => {
+      perfis += `${perfil.servidor}: ${perfil.nome}<br />`;
+    });
+
+    celulaPerfis.innerHTML = perfis;
+    this.linhaAtual.append(celulaPerfis);
+  };
 }

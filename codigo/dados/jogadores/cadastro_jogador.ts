@@ -93,7 +93,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     // 9. Mensagem ao Moderador
     this.adicionaMsgAoModerador();
 
-    // Mensagem final de ajuda ao moderador
+    // 10. Mensagem final de ajuda ao moderador
     this.adicionaMsgDeAjudaAoModerador();
   };
 

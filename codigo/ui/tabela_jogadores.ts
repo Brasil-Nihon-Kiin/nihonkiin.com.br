@@ -11,11 +11,15 @@ export default class TabelaJogadores extends HTMLElement {
         <th>País</th>
         <th>Estado</th>
         <th>Cidade</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Data de Nascimento</th>
       </thead>
       <tbody></tbody>
     </table>
   `;
   private static readonly jogadores: Jogador[] = jogadoresDB;
+  private static readonly hyphen: string = "&mdash;";
 
   private jogadorAtual: Jogador = TabelaJogadores.jogadores[0];
   private linhaAtual: HTMLTableRowElement = <HTMLTableRowElement>(
@@ -44,6 +48,11 @@ export default class TabelaJogadores extends HTMLElement {
       this.adicionaCelulaCidade();
 
       // 3. Contato
+      this.adicionaCelulaEmail();
+      this.adicionaCelulaTelefone();
+
+      // 4. Outros Dados Pessoais
+      this.adicionaCelulaNascimento();
 
       corpoTabela.append(this.linhaAtual);
     });
@@ -83,6 +92,43 @@ export default class TabelaJogadores extends HTMLElement {
     );
     celulaCidade.innerHTML = this.jogadorAtual.cidade;
     this.linhaAtual.append(celulaCidade);
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaCelulaEmail = (): void => {
+    const celulaEmail: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    celulaEmail.innerHTML =
+      this.jogadorAtual.contato?.email == null
+        ? TabelaJogadores.hyphen
+        : `<a href="mailto:${this.jogadorAtual.contato?.email}">${this.jogadorAtual.contato?.email}</a>`;
+    this.linhaAtual.append(celulaEmail);
+  };
+
+  private adicionaCelulaTelefone = (): void => {
+    const celulaTelefone: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    celulaTelefone.innerHTML =
+      this.jogadorAtual.contato?.telefone == null
+        ? TabelaJogadores.hyphen
+        : `<a href="tel:+${this.jogadorAtual.contato?.telefone.toString()}">${this.jogadorAtual.contato?.telefone.toString()}</a>`;
+    this.linhaAtual.append(celulaTelefone);
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaCelulaNascimento = (): void => {
+    const celulaNascimento: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    const dataNascimento: Date = new Date(this.jogadorAtual.nascimento);
+    celulaNascimento.innerHTML = `${
+      dataNascimento.getDate() + 1
+    }-${dataNascimento.getMonth()}-${dataNascimento.getFullYear()}`;
+    this.linhaAtual.append(celulaNascimento);
   };
 
   //----------------------------------------------------------------------------

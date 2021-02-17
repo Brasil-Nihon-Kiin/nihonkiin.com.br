@@ -36,6 +36,10 @@ export const jogadoresDB: Jogador[] = [
         rede: Rede.facebook,
         perfil: new URL("https://facebook.com/philippe.fanaro"),
       },
+      {
+        rede: Rede.reddit,
+        perfil: new URL("https://www.reddit.com/user/Fanaro009"),
+      },
     ],
     professor_certificado: true,
   },

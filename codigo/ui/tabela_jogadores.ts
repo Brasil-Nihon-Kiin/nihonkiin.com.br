@@ -1,5 +1,5 @@
 import { jogadoresDB } from "../dados/jogadores/jogadores_db";
-import Jogador, { Perfil } from "../dados/jogadores/modelos_jogadores";
+import Jogador, { Perfil, Social } from "../dados/jogadores/modelos_jogadores";
 
 export default class TabelaJogadores extends HTMLElement {
   static readonly tag: string = "tabela-jogadores";
@@ -17,6 +17,7 @@ export default class TabelaJogadores extends HTMLElement {
         <th>Nível e Elo</th>
         <th>Foto</th>
         <th>Perfis Online</th>
+        <th>Redes Sociais</th>
       </thead>
       <tbody></tbody>
     </table>
@@ -65,6 +66,9 @@ export default class TabelaJogadores extends HTMLElement {
 
       // 7. Perfis Online
       this.adicionaCelulaPerfisOnline();
+
+      // 8. Redes Sociais
+      this.adicionaRedesSociais();
 
       corpoTabela.append(this.linhaAtual);
     });
@@ -192,11 +196,28 @@ export default class TabelaJogadores extends HTMLElement {
     celulaPerfis.className = "perfis";
 
     let perfis: string = "";
-    this.jogadorAtual?.perfis?.forEach((perfil: Perfil) => {
+    this.jogadorAtual?.perfis?.forEach((perfil: Perfil): void => {
       perfis += `${perfil.servidor}: ${perfil.nome}<br />`;
     });
 
     celulaPerfis.innerHTML = perfis;
     this.linhaAtual.append(celulaPerfis);
+  };
+
+  //----------------------------------------------------------------------------
+
+  private adicionaRedesSociais = (): void => {
+    const celulaRedesSociais: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+    celulaRedesSociais.className = "redes-sociais";
+
+    let redesSociais: string = "";
+    this.jogadorAtual?.social?.forEach((redeSocial: Social): void => {
+      redesSociais += `<a href="${redeSocial.perfil.href}">${redeSocial.rede}</a><br />`;
+    });
+
+    celulaRedesSociais.innerHTML = redesSociais;
+    this.linhaAtual.append(celulaRedesSociais);
   };
 }

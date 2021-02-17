@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/* Configurações Globais */
+/* 1. Configurações Globais */
 
 @font-face {
   font-family: "Futura Book";
@@ -44,7 +44,7 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Texto Básico */
+/* 2. Texto Básico */
 
 h1 {
   font-size: 1.75rem;
@@ -85,7 +85,7 @@ code {
 }
 
 /* -------------------------------------------------------------------------- */
-/* <div>s da página inicial */
+/* 3. <div>s da página inicial */
 
 div#index {
   padding-right: 10px;
@@ -135,7 +135,7 @@ div#social-icons image {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Tabela Padrão */
+/* 4. Tabela Padrão */
 
 table {
   padding-right: 24px;
@@ -175,7 +175,7 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Mídias Visuais: Imagens, Vídeos, legendas, etc. */
+/* 5. Mídias Visuais: Imagens, Vídeos, legendas, etc. */
 
 iframe {
   max-width: var(--max-content-width-mobile);
@@ -203,7 +203,7 @@ figcaption {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Formulário de Cadastro de Jogador */
+/* 6. Formulário de Cadastro de Jogador */
 
 button#envio {
   color: var(--text-color);
@@ -282,7 +282,7 @@ button#adiciona-campo-de-perfil-servidor {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Custom Web Components */
+/* 7. Custom Web Components */
 
 br-nhk-nav h1 {
   font-family: "Futura Book", var(--font-family);
@@ -292,11 +292,11 @@ br-nhk-nav h1 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Telas com maiores larguras */
+/* 8. Telas com maiores larguras */
 
 @media (min-width: 600px) {
   /* ------------------------------------------------------------------------ */
-  /* Configurações Gerais */
+  /* 8.1. Configurações Gerais */
 
   body {
     max-width: var(--max-content-width-desktop);
@@ -308,7 +308,7 @@ br-nhk-nav h1 {
   }
 
   /* ------------------------------------------------------------------------ */
-  /* Formulário de Cadastro de Jogador */
+  /* 8.2. Formulário de Cadastro de Jogador */
 
   label:not(#ciencia-privacidade),
   perfis-servidores select {

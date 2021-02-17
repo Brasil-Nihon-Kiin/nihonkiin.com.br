@@ -1,4 +1,4 @@
-import { Servidor } from "../dados/jogadores/modelos_jogadores";
+import { Servidor } from "../dados/jogadores/enumeradores";
 
 export default class PerfisServidores extends HTMLElement {
   static readonly tag: string = "perfis-servidores";

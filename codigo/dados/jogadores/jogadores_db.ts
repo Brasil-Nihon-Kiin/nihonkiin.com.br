@@ -1,4 +1,5 @@
-import Jogador, { Estado, Pais, Rede, Servidor } from "./modelos_jogadores";
+import Jogador from "./modelos_jogadores";
+import { Estado, Pais, Rede, Servidor } from "./enumeradores";
 
 export const jogadoresDB: Jogador[] = [
   {

@@ -16,7 +16,10 @@ export const jogadoresDB: Jogador[] = [
       telefone: 5511970286739,
     },
     nascimento: Date.UTC(1992, 6, 27),
-    elo: 2300,
+    nivel: {
+      rank: "1d",
+      elo: 2300,
+    },
     foto: new URL("https://imgur.com/gallery/YtxsVTy"),
     perfis: [
       {

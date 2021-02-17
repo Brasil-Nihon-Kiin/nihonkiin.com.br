@@ -22,7 +22,7 @@ export default interface Jogador {
   cidade: string;
   contato?: Contato;
   nascimento: number;
-  elo: number;
+  nivel: Nivel;
   foto?: URL;
   perfis?: Perfil[];
   social?: Social[];
@@ -46,4 +46,9 @@ export interface Social {
 export interface Contato {
   email?: string;
   telefone?: number;
+}
+
+export interface Nivel {
+  rank: string;
+  elo: number;
 }

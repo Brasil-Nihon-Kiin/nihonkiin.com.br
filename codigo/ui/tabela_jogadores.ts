@@ -14,6 +14,7 @@ export default class TabelaJogadores extends HTMLElement {
         <th>Email</th>
         <th>Telefone</th>
         <th>Data de Nascimento</th>
+        <th>Nivel | Elo</th>
       </thead>
       <tbody></tbody>
     </table>
@@ -53,6 +54,9 @@ export default class TabelaJogadores extends HTMLElement {
 
       // 4. Outros Dados Pessoais
       this.adicionaCelulaNascimento();
+
+      // 5. Nível
+      this.adicionaNivel();
 
       corpoTabela.append(this.linhaAtual);
     });
@@ -133,5 +137,16 @@ export default class TabelaJogadores extends HTMLElement {
 
   //----------------------------------------------------------------------------
 
-  
+  private adicionaNivel = (): void => {
+    const celulaNivel: HTMLTableCellElement = <HTMLTableCellElement>(
+      document.createElement("td")
+    );
+
+    const elo: number = this.jogadorAtual.nivel.elo;
+    const rank: string = this.jogadorAtual.nivel.rank;
+
+    celulaNivel.innerHTML = `${rank} | ${elo}`;
+
+    this.linhaAtual.append(celulaNivel);
+  };
 }

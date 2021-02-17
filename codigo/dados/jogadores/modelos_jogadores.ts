@@ -48,7 +48,15 @@ export interface Contato {
   telefone?: number;
 }
 
+/**
+ * Esta é uma das parted do código atualmente mais incertas. Há diversas 
+ * maneiras de se solucionar isso, qual delas é a correta e mais adequada?
+ */
 export interface Nivel {
   rank: string;
+  /**
+   * O [[`elo`]], no futuro, talvez devesse virar algum tipo de ranking da 
+   * própria Brasil Nihon Kiin.
+   */
   elo: number;
 }

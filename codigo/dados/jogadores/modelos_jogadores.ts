@@ -49,7 +49,7 @@ export interface Contato {
 }
 
 /**
- * Esta é uma das parted do código atualmente mais incertas. Há diversas 
+ * Esta é uma das partes do código atualmente mais incertas. Há diversas 
  * maneiras de se solucionar isso, qual delas é a correta e mais adequada?
  */
 export interface Nivel {

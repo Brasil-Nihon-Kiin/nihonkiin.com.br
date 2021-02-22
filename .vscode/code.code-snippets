@@ -1,10 +1,17 @@
 {
+	"Comentário TS Divisor de Linhas": {
+		"prefix": "ts_div",
+		"body": [
+			"//------------------------------------------------------------------------------"
+		],
+		"description": "Comentário divisor de blocos de código. Utilize com parcimônia."
+	},
 	"Glift Import": {
 		"prefix": "glift_import",
 		"body": [
 			"<script src=\"../../assets/glift_1_1_2.min.js\"></script>"
 		],
-		"description": "Glift's script import for the project."
+		"description": "Import padrão do Glift."
 	},
 	"Glift SGF": {
 		"prefix": "glift_sgf",
@@ -16,6 +23,63 @@
 			"    sgf: \"${1:game-name}\",",
 			"  });",
 			"</script>"
-		]
+		],
+		"description": "Maneira padrão de se integrar um arquivo SGF ao HTML."
 	},
+	"Esqueleto de Post": {
+		"prefix": "brhnk_post",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"pt-br\">",
+			"  <head>",
+			"    <title>${1:title}</title>",
+			"",
+			"    <meta charset=\"UTF-8\" />",
+			"    <meta name=\"viewport\" content=\"width=device-width\" />",
+			"",
+			"    <meta name=\"author\" content=\"Philippe Fanaro\" />",
+			"    <meta name=\"description\" content=\"${1:title}\" />",
+			"",
+			"    <meta property=\"og:image\" content=\"../../../midia/favicon.png\" />",
+			"    <meta property=\"og:description\" content=\"${1:title}\" />",
+			"    <meta property=\"og:title\" content=\"${1:title}\" />",
+			"    <meta property=\"og:site_name\" content=\"Brasil Nihon Kiin\" />",
+			"    <meta property=\"og:type\" content=\"blog\" />",
+			"",
+			"    <link rel=\"stylesheet\" href=\"../../../index.css\" />",
+			"    <link rel=\"icon\" type=\"image/svg+xml\" href=\"../../../midia/favicon.png\" />",
+			"",
+			"    <script src=\"../../../index.js\"></script>",
+			"  </head>",
+			"  <body>",
+			"    <article>",
+			"      <h1>${1:title}</h1>",
+			"    </article>",
+			"  </body>",
+			"</html>",
+			""
+		],
+		"description": "O esqueleto inicial de um post da Brasil Nihon Kiin."
+	},
+	"Web Component Personalizado": {
+		"prefix": "cwc",
+		"body": [
+			"export default class ${1:className} extends HTMLElement {",
+			"  static readonly tag: string = \"${2:element-tag}\";",
+			"",
+			"  private static readonly template: string = `",
+			"    ${3:template}",
+			"  `;",
+			"",
+			"  constructor() {",
+			"    super();",
+			"  }",
+			"",
+			"  connectedCallback() {",
+			"    this.innerHTML = ${1:className}.template;",
+			"  }",
+			"}"
+		],
+		"description": "Componente web personalizado."
+	}
 }

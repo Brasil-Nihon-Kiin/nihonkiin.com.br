@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/* 1. Configurações Globais */
+
 @font-face {
   font-family: "Futura Book";
   src: url("http://db.onlinewebfonts.com/t/b46bb1fc76216f5cd90457d0451dbee4.eot"); /* IE9*/
@@ -24,6 +27,9 @@
   --max-content-width-mobile: 90vw;
   --max-content-width-desktop: 580px;
   --margin: 1rem;
+  --brighter-cell: #222222;
+  --darker-cell: #090705;
+  --margin-top-form-cadastro-jogador: 15px;
 }
 
 body {
@@ -34,18 +40,11 @@ body {
   padding-left: var(--margin);
   padding-right: var(--margin);
   padding-top: 1.5rem;
-  text-align: left;
   padding-bottom: 30px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-align: left;
-}
+/* -------------------------------------------------------------------------- */
+/* 2. Texto Básico */
 
 h1 {
   font-size: 1.75rem;
@@ -70,14 +69,26 @@ blockquote {
   padding-left: 10px;
 }
 
+p#subtitulo {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
 ul li,
 ol li {
   padding-bottom: 10px;
 }
 
+code {
+  font-size: 14px;
+  color: #c26f79;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. <div>s da página inicial */
+
 div#index {
   padding-right: 10px;
-  text-align: left;
 }
 
 div#index ol {
@@ -123,16 +134,17 @@ div#social-icons image {
   margin-right: 25px;
 }
 
+/* -------------------------------------------------------------------------- */
+/* 4. Tabela Padrão */
+
 table {
   padding-right: 24px;
   border-spacing: 0;
   border-collapse: separate;
   border: 1px #090705;
-  text-align: left;
 }
 
 table > caption {
-  text-align: left;
   margin-bottom: 10px;
   margin-left: 5px;
   font-size: 1rem;
@@ -154,18 +166,16 @@ th {
 
 tr:nth-child(odd),
 th {
-  background-color: #222222;
+  background-color: var(--brighter-cell);
 }
 
 tr:nth-child(even),
 th {
-  background-color: #090705;
+  background-color: var(--darker-cell);
 }
 
-p#subtitulo {
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
+/* -------------------------------------------------------------------------- */
+/* 5. Mídias Visuais: Imagens, Vídeos, legendas, etc. */
 
 iframe {
   max-width: var(--max-content-width-mobile);
@@ -190,13 +200,96 @@ figcaption {
   font-size: 0.85em;
   display: table-caption;
   caption-side: bottom;
-  text-align: justify;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Formulário de Cadastro de Jogador */
+
+button#envio {
+  color: var(--text-color);
+  background-color: var(--darker-cell);
+  height: 25px;
+}
+
+button#envio a {
+  color: var(--text-color);
+}
+
+fieldset {
+  margin-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 32px;
+  padding-bottom: 22px;
+}
+
+fieldset p {
+  padding-top: 0px;
+  margin-top: var(--margin-top-form-cadastro-jogador);
+}
+
+label:not(#ciencia-privacidade),
+perfis-servidores select {
+  display: inline-block;
+  width: 75px;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: var(--margin-top-form-cadastro-jogador);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+perfis-servidores select {
+  border-radius: 7.5px;
+  height: 25px;
+}
+
+label#ciencia-privacidade,
+input#ciencia-privacidade {
+  vertical-align: middle;
+}
+
+input {
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+  height: 20px;
+  border-radius: 7.5px;
+  padding-left: 5px;
+}
+
+select {
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+  height: 30px;
+  padding-left: 2.5px;
 }
 
 textarea {
-  background-color: #1b1c1f;
+  background-color: var(--darker-cell);
+  color: var(--text-color);
+  width: 100%;
+}
+
+button#adiciona-campo-de-rede-social,
+button#adiciona-campo-de-perfil-servidor {
+  margin-left: 22px;
+  margin-top: 15px;
+  background-color: var(--darker-cell);
   color: var(--text-color);
 }
+
+button#adiciona-campo-de-perfil-servidor {
+  margin-left: 0px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. Tabela de Jogadores */
+
+tabela-jogadores .perfis, tabela-jogadores .redes-sociais {
+  line-height: 30px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. Nav do Site */
 
 br-nhk-nav h1 {
   font-family: "Futura Book", var(--font-family);
@@ -205,7 +298,13 @@ br-nhk-nav h1 {
   margin: 0;
 }
 
+/* -------------------------------------------------------------------------- */
+/* 9. Telas com maiores larguras */
+
 @media (min-width: 600px) {
+  /* ------------------------------------------------------------------------ */
+  /* 9.1. Configurações Gerais */
+
   body {
     max-width: var(--max-content-width-desktop);
   }
@@ -214,4 +313,16 @@ br-nhk-nav h1 {
   iframe {
     max-width: var(--max-content-width-desktop);
   }
+
+  /* ------------------------------------------------------------------------ */
+  /* 9.2. Formulário de Cadastro de Jogador */
+
+  label:not(#ciencia-privacidade),
+  perfis-servidores select {
+    width: 125px;
+  }
+
+  /* ------------------------------------------------------------------------ */
 }
+
+/* -------------------------------------------------------------------------- */

@@ -20,6 +20,13 @@ export default class BotaoCadastroJogador extends HTMLElement {
     super();
   }
 
+  connectedCallback() {
+    this.innerHTML = BotaoCadastroJogador.template;
+
+    this.inicializaEscutaCheckboxDePrivacidade();
+    this.inicializaEscutaDeEnvioDeEmail();
+  }
+
   private inicializaEscutaCheckboxDePrivacidade = (): void => {
     const checkbox = <HTMLInputElement>(
       this.parentElement!.querySelector("input#ciencia-privacidade")!
@@ -29,13 +36,6 @@ export default class BotaoCadastroJogador extends HTMLElement {
     };
   };
 
-  connectedCallback() {
-    this.innerHTML = BotaoCadastroJogador.template;
-
-    this.inicializaEscutaCheckboxDePrivacidade();
-    this.inicializaEscutaDeEnvioDeEmail();
-  }
-
   private inicializaEscutaDeEnvioDeEmail = (): void => {
     const botao = <HTMLButtonElement>this.querySelector("button#envio");
     botao.onclick = (): void => {
@@ -44,7 +44,6 @@ export default class BotaoCadastroJogador extends HTMLElement {
         this.topoFormulario.checkValidity()
       ) {
         this.montaEmailLink();
-        this.emailLink += this.assunto;
         this.abreEmail();
       }
     };
@@ -95,6 +94,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
     // 10. Mensagem final de ajuda ao moderador
     this.adicionaMsgDeAjudaAoModerador();
+
+    // 11. Adiciona o assunto ao email
+    this.emailLink += this.assunto;
   };
 
   private get topoFormulario(): HTMLFormElement {

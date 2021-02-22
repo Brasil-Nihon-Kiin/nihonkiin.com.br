@@ -51,6 +51,13 @@ export interface Contato {
 /**
  * Esta é uma das partes do código atualmente mais incertas. Há diversas 
  * maneiras de se solucionar isso, qual delas é a correta e mais adequada?
+ * 
+ * Uma amostra das complicações: o problema é que eu não sei como será decidido 
+ * fazer o sistema de ranking para a Kiin. Então fica ainda mais incerto na 
+ * hora de modelar algo. Faremos ELO? Teremos que criar um ranking que o 
+ * usuário declara e um ranking competitivo para nós? Qual será a função que 
+ * determinará quantos pontos você ganha e quantos você perde? Utilizaremos a 
+ * implementação mais moderna de ELO no Go? Ou alguma vinda do xadrez?
  */
 export interface Nivel {
   rank: string;

@@ -1,7 +1,7 @@
 export default class BotaoCadastroJogador extends HTMLElement {
   static readonly tag: string = "botao-cadastro-jogador";
 
-  private static readonly emailDoModerador: string = "philippefanaro@gmail.com";
+  private static readonly emailDoModerador: string = "moderador.nihon.kiin@gmail.com";
 
   private static readonly template: string = `
     <button type="submit" id="envio">

@@ -61,35 +61,35 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
     this.assunto = BotaoCadastroJogador.assuntoDeEmailInicial;
 
-    // 1. Nome
+    // 1.  Nome
     this.adicionaPrimeiroNome();
     this.adicionaUltimoNome();
 
-    // 2. Onde você mora atualmente
+    // 2.  Onde você mora atualmente
     this.adicionaPais();
     this.adicionaEstado();
     this.adicionaCidade();
 
-    // 3. Contato
+    // 3.  Contato
     this.adicionaEmail();
     this.adicionaTelefone();
 
-    // 4. Outros Dados Pessoais
+    // 4.  Outros Dados Pessoais
     this.adicionaNascimento();
 
-    // 5. Nível
+    // 5.  Nível
     this.adicionaNivel();
 
-    // 6. Foto
+    // 6.  Foto
     this.adicionaFoto();
 
-    // 7. Perfis Online
+    // 7.  Perfis Online
     this.adicionaPerfisOnline();
 
-    // 8. Redes Sociais
+    // 8.  Redes Sociais
     this.adicionaRedesSociais();
 
-    // 9. Mensagem ao Moderador
+    // 9.  Mensagem ao Moderador
     this.adicionaMsgAoModerador();
 
     // 10. Mensagem final de ajuda ao moderador
@@ -97,6 +97,9 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
     // 11. Adiciona o assunto ao email
     this.emailLink += this.assunto;
+
+    // 12. Adiciona um campo com o conteúdo do email para ser copiado caso o 
+    //     usuário não consiga abrir o cliente de email com o browser.
   };
 
   private get topoFormulario(): HTMLFormElement {

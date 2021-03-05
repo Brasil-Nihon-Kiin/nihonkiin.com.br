@@ -1,7 +1,12 @@
 export default class BotaoCadastroJogador extends HTMLElement {
   static readonly tag: string = "botao-cadastro-jogador";
 
-  private static readonly emailDoModerador: string = "moderador.nihon.kiin@gmail.com";
+  /**
+   * Se o email abaixo for modificado, não esqueça de modificar o último
+   * parágrafo do formulário.
+   */
+  private static readonly emailDoModerador: string =
+    "moderador.nihon.kiin@gmail.com";
 
   private static readonly template: string = `
     <button type="submit" id="envio">
@@ -14,6 +19,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
 
   private concordaComFaltaDePrivacidade: boolean = false;
   private assunto: string = BotaoCadastroJogador.assuntoDeEmailInicial;
+  private conteudo: string = "";
   private emailLink: string = BotaoCadastroJogador.linkDeEmailInicial;
 
   constructor() {
@@ -44,6 +50,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
         this.topoFormulario.checkValidity()
       ) {
         this.montaEmailLink();
+        this.copiaConteudoEmailParaAreaDeTransferencia();
         this.abreEmail();
       }
     };
@@ -58,8 +65,10 @@ export default class BotaoCadastroJogador extends HTMLElement {
   };
 
   private montaEmailLink = (): void => {
-    this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
+    // 0. Inicializações
     this.assunto = BotaoCadastroJogador.assuntoDeEmailInicial;
+    this.conteudo = "";
+    this.emailLink = BotaoCadastroJogador.linkDeEmailInicial;
 
     // 1.  Nome
     this.adicionaPrimeiroNome();
@@ -96,10 +105,8 @@ export default class BotaoCadastroJogador extends HTMLElement {
     this.adicionaMsgDeAjudaAoModerador();
 
     // 11. Adiciona o assunto ao email
+    this.emailLink += this.conteudo;
     this.emailLink += this.assunto;
-
-    // 12. Adiciona um campo com o conteúdo do email para ser copiado caso o 
-    //     usuário não consiga abrir o cliente de email com o browser.
   };
 
   private get topoFormulario(): HTMLFormElement {
@@ -115,7 +122,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const primeiroNomeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#primeiro-nome")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Primeiro Nome: ${primeiroNomeInput.value}`
     );
 
@@ -126,7 +133,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const ultimoNomeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#ultimo-nome")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Último Nome: ${ultimoNomeInput.value}`
     );
 
@@ -139,25 +146,21 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const paisInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#pais")
     );
-    this.emailLink += this.adicionaParagrafoHTML(`País: ${paisInput.value}`);
+    this.conteudo += this.adicionaParagrafoHTML(`País: ${paisInput.value}`);
   };
 
   private adicionaEstado = (): void => {
     const estadoInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#estado")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
-      `Estado: ${estadoInput.value}`
-    );
+    this.conteudo += this.adicionaParagrafoHTML(`Estado: ${estadoInput.value}`);
   };
 
   private adicionaCidade = (): void => {
     const cidadeInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#cidade")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
-      `Cidade: ${cidadeInput.value}`
-    );
+    this.conteudo += this.adicionaParagrafoHTML(`Cidade: ${cidadeInput.value}`);
   };
 
   //----------------------------------------------------------------------------
@@ -166,14 +169,14 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const emailInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#email")
     );
-    this.emailLink += this.adicionaParagrafoHTML(`Email: ${emailInput.value}`);
+    this.conteudo += this.adicionaParagrafoHTML(`Email: ${emailInput.value}`);
   };
 
   private adicionaTelefone = (): void => {
     const telefoneInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#tel")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Telefone: ${telefoneInput.value}`
     );
   };
@@ -184,7 +187,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const nascimentoInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#nascimento")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Data de Nascimento: ${nascimentoInput.value}`
     );
   };
@@ -195,7 +198,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const nivelInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#nivel")
     );
-    this.emailLink += this.adicionaParagrafoHTML(`Nível: ${nivelInput.value}`);
+    this.conteudo += this.adicionaParagrafoHTML(`Nível: ${nivelInput.value}`);
   };
 
   //----------------------------------------------------------------------------
@@ -215,7 +218,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
       parServidorPerfil += `<li>(${servidor}, ${perfil})</li>`;
     }
 
-    this.emailLink += `<div><p>Perfis Online:</p><ol>${parServidorPerfil}</ol></div>`;
+    this.conteudo += `<div><p>Perfis Online:</p><ol>${parServidorPerfil}</ol></div>`;
   };
 
   //----------------------------------------------------------------------------
@@ -232,7 +235,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
       }
     );
 
-    this.emailLink += `<div><p>Redes Sociais:</p><ol>${redesSociais}</ol></div>`;
+    this.conteudo += `<div><p>Redes Sociais:</p><ol>${redesSociais}</ol></div>`;
   };
 
   //----------------------------------------------------------------------------
@@ -241,7 +244,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const fotoInput = <HTMLInputElement>(
       this.topoFormulario.querySelector("input#img-link")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Link da Foto: ${fotoInput.value}`
     );
   };
@@ -252,7 +255,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
     const msgAoModeradorTextarea = <HTMLTextAreaElement>(
       this.topoFormulario.querySelector("textarea#msg-ao-moderador")
     );
-    this.emailLink += this.adicionaParagrafoHTML(
+    this.conteudo += this.adicionaParagrafoHTML(
       `Mensagem ao Moderador: ${msgAoModeradorTextarea.value}`
     );
   };
@@ -260,8 +263,14 @@ export default class BotaoCadastroJogador extends HTMLElement {
   //----------------------------------------------------------------------------
 
   private adicionaMsgDeAjudaAoModerador = (): void => {
-    this.emailLink += this.adicionaParagrafoHTML(
-      "Ao moderador: para uma visualização mais agradável, salve o texto acima como um arquivo HTML e abra-o em um browser."
+    this.conteudo += this.adicionaParagrafoHTML(
+      "Ao moderador: para uma visualização mais agradável, salve o texto acima \
+como um arquivo HTML e abra-o em um browser."
     );
   };
+
+  //----------------------------------------------------------------------------
+
+  private copiaConteudoEmailParaAreaDeTransferencia = (): Promise<void> =>
+    navigator.clipboard.writeText(this.conteudo);
 }

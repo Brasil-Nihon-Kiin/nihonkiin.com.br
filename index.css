@@ -281,10 +281,15 @@ button#adiciona-campo-de-perfil-servidor {
   margin-left: 0px;
 }
 
+p#ajuda-com-area-de-transferencia {
+  font-size: 0.8rem;
+}
+
 /* -------------------------------------------------------------------------- */
 /* 7. Tabela de Jogadores */
 
-tabela-jogadores .perfis, tabela-jogadores .redes-sociais {
+tabela-jogadores .perfis,
+tabela-jogadores .redes-sociais {
   line-height: 30px;
 }
 

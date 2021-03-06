@@ -3,7 +3,7 @@ import { Estado, Pais, Rede, Servidor } from "./enumeradores";
 
 /**
  * A princípio, a chave de cada jogador no banco de dados será o index na lista
- * do próprio banco de dados.
+ * abaixo.
  */
 export const jogadoresDB: Jogador[] = [
   {
@@ -39,6 +39,10 @@ export const jogadoresDB: Jogador[] = [
       {
         rede: Rede.reddit,
         perfil: new URL("https://www.reddit.com/user/Fanaro009"),
+      },
+      {
+        rede: Rede.youtube,
+        perfil: new URL("https://www.youtube.com/c/PhilippeFanaro"),
       },
     ],
     professor_certificado: true,

@@ -2,6 +2,7 @@ export enum Rede {
   facebook = "Facebook",
   reddit = "Reddit",
   twitch = "Twitch",
+  youtube = "YouTube",
 }
 
 export enum Pais {

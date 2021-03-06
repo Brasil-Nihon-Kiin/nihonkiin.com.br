@@ -43,4 +43,41 @@ export const jogadoresDB: Jogador[] = [
     ],
     professor_certificado: true,
   },
+  {
+    nome: "Laércio Pereira",
+    pais: Pais.brasil,
+    estado: Estado.parana,
+    cidade: "Curitiba",
+    contato: {
+      email: "laercioskt@gmail.com",
+      telefone: 5541996913524,
+    },
+    nascimento: Date.UTC(1987, 5, 20),
+    nivel: {
+      rank: "1d",
+      elo: 2300,
+    },
+    foto: new URL("http://gravatar.com/avatar/3de834177016267783871ee24c3e9d8c"),
+    perfis: [
+      {
+        servidor: Servidor.ogs,
+        nome: "laercioskt",
+      },
+      {
+        servidor: Servidor.kgs,
+        nome: "laercioskt",
+      },
+    ],
+    social: [
+      {
+        rede: Rede.facebook,
+        perfil: new URL("https://www.facebook.com/laercioskt"),
+      },
+      {
+        rede: Rede.twitch,
+        perfil: new URL("https://www.twitch.tv/laercionogo")
+      }
+    ],
+    professor_certificado: false,
+  },
 ];

@@ -96,7 +96,7 @@ export const jogadoresDB: Jogador[] = [
     nascimento: Date.UTC(1988, 5, 7),
     nivel: {
       rank: "1k",
-      elo: 2200
+      elo: 2200,
     },
     foto: new URL("https://media-exp1.licdn.com/dms/image/C5603AQEVTzZdChNZqA/profile-displayphoto-shrink_200_200/0/1517373616794?e=1619049600"),
     professor_certificado: false,

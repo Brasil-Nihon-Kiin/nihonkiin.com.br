@@ -84,4 +84,21 @@ export const jogadoresDB: Jogador[] = [
     ],
     professor_certificado: false,
   },
+  {
+    nome: "Elias Cardoso",
+    pais: Pais.brasil,
+    estado: Estado.rio,
+    cidade: "São Gonçalo",
+    contato: {
+      email: "ebrc.2013@gmail.com",
+      telefone: 5521969194896
+    },
+    nascimento: Date.UTC(1988, 5, 7),
+    nivel: {
+      rank: "1k",
+      elo: 2200
+    },
+    foto: new URL("https://media-exp1.licdn.com/dms/image/C5603AQEVTzZdChNZqA/profile-displayphoto-shrink_200_200/0/1517373616794?e=1619049600"),
+    professor_certificado: false,
+  },
 ];

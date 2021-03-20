@@ -1,3 +1,5 @@
+import FormatadorData from "../../formatador_data";
+
 export default class BotaoCadastroJogador extends HTMLElement {
   static readonly tag: string = "botao-cadastro-jogador";
 
@@ -188,7 +190,7 @@ export default class BotaoCadastroJogador extends HTMLElement {
       this.topoFormulario.querySelector("input#nascimento")
     );
     this.conteudo += this.adicionaParagrafoHTML(
-      `Data de Nascimento: ${nascimentoInput.value}`
+      `Data de Nascimento: ${FormatadorData.formataISO8601ParaPtBR(nascimentoInput.value)}`
     );
   };
 

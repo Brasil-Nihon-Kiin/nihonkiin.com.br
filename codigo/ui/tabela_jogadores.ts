@@ -1,5 +1,6 @@
 import { jogadoresDB } from "../dados/jogadores/jogadores_db";
 import Jogador, { Perfil, Social } from "../dados/jogadores/modelos_jogadores";
+import FormatadorData from "../formatador_data";
 
 export default class TabelaJogadores extends HTMLElement {
   static readonly tag: string = "tabela-jogadores";
@@ -153,12 +154,7 @@ export default class TabelaJogadores extends HTMLElement {
       document.createElement("td")
     );
 
-    const dataNascimento: Date = new Date(this.jogadorAtual.nascimento);
-    const dia: number = dataNascimento.getDate() + 1;
-    const mes: number = dataNascimento.getMonth();
-    const ano: number = dataNascimento.getFullYear();
-
-    celulaNascimento.innerHTML = `${dia}-${mes}-${ano}`;
+    celulaNascimento.innerHTML =  FormatadorData.formataUTCParaPtBR(this.jogadorAtual.nascimento);
     this.linhaAtual.append(celulaNascimento);
   };
 

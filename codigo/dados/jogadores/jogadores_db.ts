@@ -56,7 +56,7 @@ export const jogadoresDB: Jogador[] = [
       email: "laercioskt@gmail.com",
       telefone: 5541996913524,
     },
-    nascimento: Date.UTC(1987, 5, 20),
+    nascimento: Date.UTC(1987, 4, 20),
     nivel: {
       rank: "1d",
       elo: 2300,

@@ -1,11 +1,11 @@
 export default class FormatadorData {
 
     static formataISO8601ParaPtBR(data: string): string {
-        var dataArray = data.split("-")
+        const dataArray = data.split("-")
 
-        var dia = dataArray[2];
-        var mes = dataArray[1];
-        var ano = dataArray[0];
+        const dia = dataArray[2];
+        const mes = dataArray[1];
+        const ano = dataArray[0];
 
         return `${dia}/${mes}/${ano}`;
     }

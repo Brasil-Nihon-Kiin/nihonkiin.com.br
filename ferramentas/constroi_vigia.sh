@@ -1,6 +1,6 @@
 #!/bin/bash
 
-live-server .
+live-server . &
 tsc -w &
 npx webpack --watch &
 npm t -- --watch

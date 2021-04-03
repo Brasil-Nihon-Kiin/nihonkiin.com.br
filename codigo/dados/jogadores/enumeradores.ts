@@ -3,6 +3,7 @@ export enum Rede {
   reddit = "Reddit",
   twitch = "Twitch",
   youtube = "YouTube",
+  instagram = "Instagram",
 }
 
 export enum Pais {

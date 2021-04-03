@@ -101,4 +101,45 @@ export const jogadoresDB: Jogador[] = [
     foto: new URL("https://media-exp1.licdn.com/dms/image/C5603AQEVTzZdChNZqA/profile-displayphoto-shrink_200_200/0/1517373616794?e=1619049600"),
     professor_certificado: false,
   },
+  {
+    nome: "Adalberto Duarte",
+    pais: Pais.brasil,
+    estado: Estado.para,
+    cidade: "Belém",
+    contato: {
+      email: "contato@adalberto-duarte.com",
+      telefone: 5591981410408,
+    },
+    nascimento: Date.UTC(1978, 8, 30),
+    nivel: {
+      rank: "5k",
+      elo: 1800,
+    },
+    foto: new URL(""),
+    perfis: [
+      {
+        servidor: Servidor.ogs,
+        nome: "Adalberto",
+      },
+      {
+        servidor: Servidor.kgs,
+        nome: "Adalberto",
+      },
+    ],
+    social: [
+      {
+        rede: Rede.facebook,
+        perfil: new URL("https://www.facebook.com/adalbertoreis.duarte"),
+      },
+      {
+        rede: Rede.reddit,
+        perfil: new URL("https://www.reddit.com/user/Fanaro009"),
+      },
+      {
+        rede: Rede.youtube,
+        perfil: new URL("https://www.youtube.com/c/PhilippeFanaro"),
+      },
+    ],
+    professor_certificado: true,
+  },
 ];

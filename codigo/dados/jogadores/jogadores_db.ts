@@ -132,14 +132,10 @@ export const jogadoresDB: Jogador[] = [
         perfil: new URL("https://www.facebook.com/adalbertoreis.duarte"),
       },
       {
-        rede: Rede.reddit,
-        perfil: new URL("https://www.reddit.com/user/Fanaro009"),
-      },
-      {
-        rede: Rede.youtube,
-        perfil: new URL("https://www.youtube.com/c/PhilippeFanaro"),
+        rede: Rede.instagram,
+        perfil: new URL("https://www.instagram.com/adalbertorduarte"),
       },
     ],
-    professor_certificado: true,
+    professor_certificado: false,
   },
 ];

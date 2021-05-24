@@ -138,4 +138,45 @@ export const jogadoresDB: Jogador[] = [
     ],
     professor_certificado: false,
   },
+  {
+    nome: "Emanuel Araújo",
+    pais: Pais.brasil,
+    estado: Estado.rio,
+    cidade: "Rio de Janeiro",
+    contato: {
+      email: "entravix@gmail.com",
+      telefone: 5521992931587,
+    },
+    nascimento: Date.UTC(1989, 12, 26),
+    nivel: {
+      rank: "1k",
+      elo: 2200,
+    },
+    foto: new URL(""),
+    perfis: [
+      {
+        servidor: Servidor.ogs,
+        nome: "Cactus Juice",
+      },
+      {
+        servidor: Servidor.foxy,
+        nome: "Entravix",
+      },
+      {
+        servidor: Servidor.kgs,
+        nome: "Entravix",
+      },
+    ],
+    social: [
+      {
+        rede: Rede.facebook,
+        perfil: new URL("https://www.facebook.com/emanuel.araujo.cs"),
+      },
+      {
+        rede: Rede.instagram,
+        perfil: new URL("https://www.instagram.com/godecacto/"),
+      },
+    ],
+    professor_certificado: false,
+  },
 ];

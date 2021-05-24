@@ -139,6 +139,34 @@ export const jogadoresDB: Jogador[] = [
     professor_certificado: false,
   },
   {
+    nome: "Julio Gabriel Otterback Pinheiro",
+    pais: Pais.brasil,
+    estado: Estado.mt,
+    cidade: "Cuiabá",
+    contato: {
+      email: "julio_gabriel@hotmail.com",
+      telefone: 5565996145858,
+    },
+    nascimento: Date.UTC(1986, 5, 31),
+    nivel: {
+      rank: "7k",
+      elo: 1600,
+    },
+    foto: new URL("https://i.imgur.com/SZ6HP5n.png"),
+    perfis: [
+      {
+        servidor: Servidor.ogs,
+        nome: "bodlike",
+      },
+      {
+        servidor: Servidor.kgs,
+        nome: "bodlike",
+      },
+    ],
+    social: [],
+    professor_certificado: false,
+  },
+  {
     nome: "Emanuel Araújo",
     pais: Pais.brasil,
     estado: Estado.rio,

@@ -139,6 +139,43 @@ export const jogadoresDB: Jogador[] = [
     professor_certificado: false,
   },
   {
+    nome: "Felipe Herman van Riemsdijk",
+    pais: Pais.brasil,
+    estado: Estado.sp,
+    cidade: "São Paulo",
+    contato: {
+      email: "fh.vanriemsdijk@gmail.com",
+      telefone: 5511970565826,
+    },
+    nascimento: Date.UTC(1986, 11, 24),
+    nivel: {
+      rank: "5d",
+      elo: 2700,
+    },
+    foto: new URL(""),
+    perfis: [
+      {
+        servidor: Servidor.ogs,
+        nome: "riemsdijk",
+      },
+      {
+        servidor: Servidor.foxy,
+        nome: "riemsdijk",
+      },
+      {
+        servidor: Servidor.kgs,
+        nome: "riemsdijk",
+      },
+    ],
+    social: [
+      {
+        rede: Rede.facebook,
+        perfil: new URL("https://www.facebook.com/fhfvanriemsdijk/"),
+      },
+    ],
+    professor_certificado: true,
+  },
+  {
     nome: "Julio Gabriel Otterback Pinheiro",
     pais: Pais.brasil,
     estado: Estado.mt,

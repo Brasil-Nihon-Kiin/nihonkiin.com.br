@@ -115,7 +115,7 @@ export const jogadoresDB: Jogador[] = [
       rank: "5k",
       elo: 1800,
     },
-    foto: new URL(""),
+    foto: new URL("https://www.facebook.com/adalbertoreis.duarte"),
     perfis: [
       {
         servidor: Servidor.ogs,
@@ -152,7 +152,7 @@ export const jogadoresDB: Jogador[] = [
       rank: "5d",
       elo: 2700,
     },
-    foto: new URL(""),
+    foto: new URL("https://www.facebook.com/fhfvanriemsdijk/"),
     perfis: [
       {
         servidor: Servidor.ogs,
@@ -217,7 +217,7 @@ export const jogadoresDB: Jogador[] = [
       rank: "1k",
       elo: 2200,
     },
-    foto: new URL(""),
+    foto: new URL("https://www.facebook.com/emanuel.araujo.cs"),
     perfis: [
       {
         servidor: Servidor.ogs,
